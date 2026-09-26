@@ -34,12 +34,7 @@
 
 ## 🎯 Objective
 
-
-
-
-
-
-
+<img width="1536" height="1024" alt="ChatGPT Image Sep 26, 2026, 06_03_58 PM" src="https://github.com/user-attachments/assets/19d9decd-7e19-4f29-ae38-476399f5104f" />
 
 ---
 
