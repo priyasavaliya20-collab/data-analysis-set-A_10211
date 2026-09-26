@@ -1,0 +1,13 @@
+record_id,month,route_id,hub,promised_days,actual_days,route_name,service_type,delay_days,is_delayed
+1,Jan,R1,Ahmedabad,2,2,Metro Link,Express,0,False
+2,Jan,R2,Chennai,3,4,City Dash,Express,1,True
+3,Jan,R3,Delhi,5,5,Highway Freight,Standard,0,False
+4,Jan,R4,Mumbai,4,10,Rural Feeder,Standard,6,True
+5,Feb,R1,Chennai,2,5,Metro Link,Express,3,True
+6,Feb,R2,Delhi,3,3,City Dash,Express,0,False
+7,Feb,R3,Mumbai,5,10,Highway Freight,Standard,5,True
+8,Feb,R4,Chennai,6,7,Rural Feeder,Standard,1,True
+9,Mar,R1,Delhi,2,8,Metro Link,Express,6,True
+10,Mar,R2,Mumbai,3,5,City Dash,Express,2,True
+11,Mar,R3,Chennai,5,5,Highway Freight,Standard,0,False
+12,Mar,R4,Mumbai,6,15,Rural Feeder,Standard,9,True
