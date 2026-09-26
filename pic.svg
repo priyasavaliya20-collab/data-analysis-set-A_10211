@@ -3,1104 +3,1323 @@
      height="500"
      viewBox="0 0 1200 500">
 
-  <defs>
+<defs>
 
-    <!-- ============================================= -->
-    <!-- PINK / ROSE GRADIENT -->
-    <!-- ============================================= -->
+  <!-- =============================== -->
+  <!-- ROSE / PINK THEME -->
+  <!-- =============================== -->
 
-    <linearGradient id="pink"
-                    x1="0"
-                    y1="0"
-                    x2="1"
-                    y2="1">
+  <linearGradient id="rose"
+                  x1="0" y1="0"
+                  x2="1" y2="1">
 
-      <stop offset="0%" stop-color="#F47BA2"/>
-      <stop offset="100%" stop-color="#D94F7A"/>
+    <stop offset="0%" stop-color="#F7A1BB"/>
+    <stop offset="50%" stop-color="#F05A8A"/>
+    <stop offset="100%" stop-color="#D94F7A"/>
 
-    </linearGradient>
-
-
-    <!-- ============================================= -->
-    <!-- LIGHT PINK GRADIENT -->
-    <!-- ============================================= -->
-
-    <linearGradient id="lightPink"
-                    x1="0"
-                    y1="0"
-                    x2="1"
-                    y2="0">
-
-      <stop offset="0%" stop-color="#F7A1BB"/>
-      <stop offset="100%" stop-color="#F05A8A"/>
-
-    </linearGradient>
+  </linearGradient>
 
 
-    <!-- ============================================= -->
-    <!-- BACKGROUND GRID -->
-    <!-- ============================================= -->
+  <linearGradient id="softRose"
+                  x1="0" y1="0"
+                  x2="1" y2="0">
 
-    <pattern id="grid"
-             width="28"
-             height="28"
-             patternUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#F7A1BB"/>
+    <stop offset="100%" stop-color="#F05A8A"/>
 
-      <path d="M28 0H0V28"
-            fill="none"
-            stroke="#E9E9E9"
-            stroke-width="1"/>
-
-    </pattern>
+  </linearGradient>
 
 
-    <!-- ============================================= -->
-    <!-- SHADOW -->
-    <!-- ============================================= -->
+  <!-- GRID -->
 
-    <filter id="shadow"
-            x="-30%"
-            y="-30%"
-            width="160%"
-            height="160%">
+  <pattern id="grid"
+           width="28"
+           height="28"
+           patternUnits="userSpaceOnUse">
 
-      <feDropShadow
-        dx="0"
-        dy="7"
-        stdDeviation="8"
-        flood-opacity="0.16"/>
+    <path d="M28 0H0V28"
+          fill="none"
+          stroke="#E9E9E9"
+          stroke-width="1"/>
 
-    </filter>
+  </pattern>
 
 
-    <!-- ============================================= -->
-    <!-- PINK GLOW -->
-    <!-- ============================================= -->
+  <!-- SHADOW -->
 
-    <filter id="pinkGlow"
-            x="-100%"
-            y="-100%"
-            width="300%"
-            height="300%">
+  <filter id="shadow"
+          x="-30%"
+          y="-30%"
+          width="160%"
+          height="160%">
 
-      <feGaussianBlur
-        stdDeviation="4"
-        result="blur"/>
+    <feDropShadow
+      dx="0"
+      dy="6"
+      stdDeviation="7"
+      flood-opacity=".15"/>
 
-      <feMerge>
-
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-
-      </feMerge>
-
-    </filter>
+  </filter>
 
 
-    <!-- ============================================= -->
-    <!-- DATA FLOW PATH -->
-    <!-- ============================================= -->
+  <!-- PINK GLOW -->
 
-    <path id="dataFlow"
-          d="
-          M670 285
-          C720 250
-          780 230
-          835 205
-          C885 182
-          930 160
-          980 153
-          "/>
+  <filter id="glow"
+          x="-100%"
+          y="-100%"
+          width="300%"
+          height="300%">
 
-  </defs>
+    <feGaussianBlur
+      stdDeviation="4"
+      result="blur"/>
+
+    <feMerge>
+
+      <feMergeNode in="blur"/>
+      <feMergeNode in="SourceGraphic"/>
+
+    </feMerge>
+
+  </filter>
 
 
-  <!-- ================================================= -->
-  <!-- MAIN BACKGROUND -->
-  <!-- ================================================= -->
+  <!-- RELATIONSHIP PATH -->
+
+  <path id="relationship"
+        d="M950 169
+           C965 169 970 185 985 185
+           C997 185 1000 169 1018 169"/>
+
+
+</defs>
+
+
+<!-- ================================================= -->
+<!-- BACKGROUND -->
+<!-- ================================================= -->
+
+<rect
+  width="1200"
+  height="500"
+  fill="#FFFFFF"/>
+
+
+<rect
+  x="0"
+  y="7"
+  width="1200"
+  height="493"
+  fill="url(#grid)"
+  opacity=".55"/>
+
+
+<!-- TOP PINK LINE -->
+
+<rect
+  x="0"
+  y="0"
+  width="1200"
+  height="7"
+  fill="url(#rose)">
+
+  <animate
+    attributeName="opacity"
+    values=".75;1;.75"
+    dur="2.5s"
+    repeatCount="indefinite"/>
+
+</rect>
+
+
+<!-- ================================================= -->
+<!-- LEFT HEADER -->
+<!-- ================================================= -->
+
+<text
+  x="60"
+  y="58"
+  font-family="Arial"
+  font-size="13"
+  font-weight="700"
+  letter-spacing="2"
+  fill="#E85A88">
+
+  POWER BI • DATA ANALYTICS
+
+</text>
+
+
+<text
+  x="60"
+  y="108"
+  font-family="Arial"
+  font-size="48"
+  font-weight="800"
+  fill="#111111">
+
+  Power BI
+
+</text>
+
+
+<text
+  x="60"
+  y="137"
+  font-family="Arial"
+  font-size="17"
+  fill="#666666">
+
+  Model • Measure • Visualize • Filter
+
+</text>
+
+
+<!-- ================================================= -->
+<!-- WORKFLOW -->
+<!-- ================================================= -->
+
+
+<!-- DATA IMPORT -->
+
+<rect
+  x="60"
+  y="170"
+  width="105"
+  height="65"
+  rx="13"
+  fill="#111111"/>
+
+
+<text
+  x="112"
+  y="196"
+  text-anchor="middle"
+  font-family="Arial"
+  font-size="11"
+  font-weight="800"
+  fill="#FFFFFF">
+
+  DATA IMPORT
+
+</text>
+
+
+<text
+  x="112"
+  y="216"
+  text-anchor="middle"
+  font-family="Arial"
+  font-size="10"
+  fill="#AAAAAA">
+
+  CSV sources
+
+</text>
+
+
+<!-- FLOW DOT -->
+
+<circle
+  cx="183"
+  cy="202"
+  r="5"
+  fill="#F05A8A"
+  filter="url(#glow)">
+
+  <animate
+    attributeName="r"
+    values="4;8;4"
+    dur="1.5s"
+    repeatCount="indefinite"/>
+
+</circle>
+
+
+<line
+  x1="165"
+  y1="202"
+  x2="200"
+  y2="202"
+  stroke="#E85A88"
+  stroke-width="2"/>
+
+
+<!-- POWER QUERY -->
+
+<rect
+  x="201"
+  y="170"
+  width="105"
+  height="65"
+  rx="13"
+  fill="#FFFFFF"
+  stroke="#E85A88"
+  stroke-width="2"/>
+
+
+<text
+  x="253"
+  y="196"
+  text-anchor="middle"
+  font-family="Arial"
+  font-size="11"
+  font-weight="800"
+  fill="#222222">
+
+  POWER QUERY
+
+</text>
+
+
+<text
+  x="253"
+  y="216"
+  text-anchor="middle"
+  font-family="Arial"
+  font-size="10"
+  fill="#777777">
+
+  Clean data
+
+</text>
+
+
+<!-- FLOW -->
+
+<circle
+  cx="324"
+  cy="202"
+  r="5"
+  fill="#F05A8A">
+
+  <animate
+    attributeName="cx"
+    values="315;330;315"
+    dur="1.5s"
+    repeatCount="indefinite"/>
+
+</circle>
+
+
+<line
+  x1="306"
+  y1="202"
+  x2="343"
+  y2="202"
+  stroke="#E85A88"
+  stroke-width="2"/>
+
+
+<!-- DATA MODEL -->
+
+<rect
+  x="344"
+  y="170"
+  width="105"
+  height="65"
+  rx="13"
+  fill="url(#rose)"/>
+
+
+<text
+  x="396"
+  y="196"
+  text-anchor="middle"
+  font-family="Arial"
+  font-size="11"
+  font-weight="800"
+  fill="#111111">
+
+  DATA MODEL
+
+</text>
+
+
+<text
+  x="396"
+  y="216"
+  text-anchor="middle"
+  font-family="Arial"
+  font-size="10"
+  fill="#333333">
+
+  Relationships
+
+</text>
+
+
+<!-- FLOW -->
+
+<circle
+  cx="467"
+  cy="202"
+  r="5"
+  fill="#F05A8A"
+  filter="url(#glow)"/>
+
+
+<line
+  x1="449"
+  y1="202"
+  x2="486"
+  y2="202"
+  stroke="#E85A88"
+  stroke-width="2"/>
+
+
+<!-- VISUALS -->
+
+<rect
+  x="487"
+  y="170"
+  width="105"
+  height="65"
+  rx="13"
+  fill="#111111"/>
+
+
+<text
+  x="539"
+  y="196"
+  text-anchor="middle"
+  font-family="Arial"
+  font-size="11"
+  font-weight="800"
+  fill="#FFFFFF">
+
+  VISUALS
+
+</text>
+
+
+<text
+  x="539"
+  y="216"
+  text-anchor="middle"
+  font-family="Arial"
+  font-size="10"
+  fill="#AAAAAA">
+
+  Dashboard
+
+</text>
+
+
+<!-- ================================================= -->
+<!-- DASHBOARD PANEL -->
+<!-- ================================================= -->
+
+<g filter="url(#shadow)">
 
   <rect
-    x="0"
-    y="0"
-    width="1200"
-    height="500"
-    fill="#FFFFFF"/>
-
-
-  <rect
-    x="0"
-    y="7"
-    width="1200"
-    height="493"
-    fill="url(#grid)"
-    opacity="0.55"/>
-
-
-  <!-- ================================================= -->
-  <!-- TOP PINK LINE -->
-  <!-- ================================================= -->
-
-  <rect
-    x="0"
-    y="0"
-    width="1200"
-    height="7"
-    fill="url(#pink)">
-
-    <animate
-      attributeName="opacity"
-      values="0.75;1;0.75"
-      dur="2.5s"
-      repeatCount="indefinite"/>
-
-  </rect>
-
-
-  <!-- ================================================= -->
-  <!-- LEFT HEADER -->
-  <!-- ================================================= -->
-
-  <text
-    x="65"
-    y="57"
-    font-family="Arial, Helvetica, sans-serif"
-    font-size="13"
-    font-weight="700"
-    letter-spacing="2.2"
-    fill="#E85A88">
-
-    TASK THREE • DATA ANALYSIS
-
-  </text>
-
-
-  <text
-    x="65"
-    y="108"
-    font-family="Arial, Helvetica, sans-serif"
-    font-size="48"
-    font-weight="800"
-    fill="#111111">
-
-    Python
-
-  </text>
-
-
-  <text
-    x="65"
-    y="137"
-    font-family="Arial, Helvetica, sans-serif"
-    font-size="17"
-    fill="#666666">
-
-    Load • Clean • Merge • Analyze
-
-  </text>
-
-
-  <!-- ================================================= -->
-  <!-- PYTHON DATA WORKFLOW CARD -->
-  <!-- ================================================= -->
-
-  <g filter="url(#shadow)">
-
-    <rect
-      x="65"
-      y="170"
-      width="500"
-      height="176"
-      rx="18"
-      fill="#FFFFFF"
-      stroke="#111111"
-      stroke-width="1.7"/>
-
-  </g>
-
-
-  <text
-    x="90"
-    y="201"
-    font-family="Arial"
-    font-size="12"
-    font-weight="800"
-    letter-spacing="1.6"
-    fill="#222222">
-
-    PYTHON DATA WORKFLOW
-
-  </text>
-
-
-  <!-- ================================================= -->
-  <!-- LOAD BOX -->
-  <!-- ================================================= -->
-
-  <rect
-    x="90"
-    y="220"
-    width="92"
-    height="59"
-    rx="13"
-    fill="#111111"/>
-
-
-  <text
-    x="136"
-    y="246"
-    text-anchor="middle"
-    font-family="Arial"
-    font-size="12"
-    font-weight="800"
-    fill="#FFFFFF">
-
-    LOAD
-
-  </text>
-
-
-  <text
-    x="136"
-    y="264"
-    text-anchor="middle"
-    font-family="Arial"
-    font-size="10"
-    fill="#AAAAAA">
-
-    Pandas
-
-  </text>
-
-
-  <!-- ================================================= -->
-  <!-- CLEAN BOX -->
-  <!-- ================================================= -->
-
-  <rect
-    x="205"
-    y="220"
-    width="92"
-    height="59"
-    rx="13"
+    x="60"
+    y="265"
+    width="731"
+    height="185"
+    rx="20"
     fill="#FFFFFF"
-    stroke="#E85A88"
-    stroke-width="2"/>
+    stroke="#111111"
+    stroke-width="1.7"/>
+
+</g>
 
 
-  <text
-    x="251"
-    y="246"
-    text-anchor="middle"
-    font-family="Arial"
-    font-size="12"
-    font-weight="800"
-    fill="#222222">
+<!-- Dashboard Header -->
 
-    CLEAN
-
-  </text>
+<rect
+  x="60"
+  y="265"
+  width="731"
+  height="43"
+  rx="20"
+  fill="#111111"/>
 
 
-  <text
-    x="251"
-    y="264"
-    text-anchor="middle"
-    font-family="Arial"
-    font-size="10"
-    fill="#777777">
-
-    Duplicates
-
-  </text>
+<rect
+  x="60"
+  y="288"
+  width="731"
+  height="20"
+  fill="#111111"/>
 
 
-  <!-- ================================================= -->
-  <!-- MERGE BOX -->
-  <!-- ================================================= -->
+<text
+  x="85"
+  y="291"
+  font-family="Arial"
+  font-size="15"
+  font-weight="800"
+  fill="#FFFFFF">
+
+  DELIVERY PERFORMANCE DASHBOARD
+
+</text>
+
+
+<!-- Hub selector -->
+
+<rect
+  x="620"
+  y="274"
+  width="145"
+  height="28"
+  rx="9"
+  fill="#222222"
+  stroke="#666666"/>
+
+
+<text
+  x="636"
+  y="292"
+  font-family="Arial"
+  font-size="9"
+  font-weight="700"
+  fill="#FFFFFF">
+
+  HUB
+
+</text>
+
+
+<text
+  x="675"
+  y="292"
+  font-family="Arial"
+  font-size="9"
+  fill="#AAAAAA">
+
+  All
+
+</text>
+
+
+<path
+  d="M747 284 L753 290 L759 284"
+  fill="none"
+  stroke="#F05A8A"
+  stroke-width="2"/>
+
+
+<!-- ================================================= -->
+<!-- KPI 1 -->
+<!-- ================================================= -->
+
+<rect
+  x="82"
+  y="323"
+  width="205"
+  height="56"
+  rx="13"
+  fill="#F8F8F8"
+  stroke="#E0E0E0"/>
+
+
+<circle
+  cx="110"
+  cy="351"
+  r="15"
+  fill="#111111"
+  stroke="#F05A8A"
+  stroke-width="2"/>
+
+
+<path
+  d="M103 347 L110 342 L117 347 L117 355 L110 360 L103 355 Z"
+  fill="none"
+  stroke="#F05A8A"
+  stroke-width="2"/>
+
+
+<text
+  x="135"
+  y="345"
+  font-family="Arial"
+  font-size="9"
+  font-weight="700"
+  fill="#777777">
+
+  DELIVERY COUNT
+
+</text>
+
+
+<rect
+  x="135"
+  y="354"
+  width="90"
+  height="7"
+  rx="4"
+  fill="#111111"/>
+
+
+<rect
+  x="135"
+  y="354"
+  width="72"
+  height="7"
+  rx="4"
+  fill="#F05A8A">
+
+  <animate
+    attributeName="width"
+    values="30;90;72"
+    dur="3s"
+    repeatCount="indefinite"/>
+
+</rect>
+
+
+<!-- ================================================= -->
+<!-- KPI 2 -->
+<!-- ================================================= -->
+
+<rect
+  x="301"
+  y="323"
+  width="205"
+  height="56"
+  rx="13"
+  fill="#F8F8F8"
+  stroke="#E0E0E0"/>
+
+
+<circle
+  cx="329"
+  cy="351"
+  r="15"
+  fill="#111111"
+  stroke="#F05A8A"
+  stroke-width="2"/>
+
+
+<circle
+  cx="329"
+  cy="351"
+  r="7"
+  fill="none"
+  stroke="#F05A8A"
+  stroke-width="2"/>
+
+
+<line
+  x1="329"
+  y1="351"
+  x2="329"
+  y2="345"
+  stroke="#F05A8A"
+  stroke-width="2"/>
+
+
+<line
+  x1="329"
+  y1="351"
+  x2="334"
+  y2="354"
+  stroke="#F05A8A"
+  stroke-width="2"/>
+
+
+<text
+  x="354"
+  y="345"
+  font-family="Arial"
+  font-size="9"
+  font-weight="700"
+  fill="#777777">
+
+  TOTAL DELAY DAYS
+
+</text>
+
+
+<rect
+  x="354"
+  y="354"
+  width="90"
+  height="7"
+  rx="4"
+  fill="#111111"/>
+
+
+<rect
+  x="354"
+  y="354"
+  width="55"
+  height="7"
+  rx="4"
+  fill="#F05A8A">
+
+  <animate
+    attributeName="width"
+    values="20;80;55"
+    dur="3s"
+    repeatCount="indefinite"/>
+
+</rect>
+
+
+<!-- ================================================= -->
+<!-- KPI 3 -->
+<!-- ================================================= -->
+
+<rect
+  x="522"
+  y="323"
+  width="246"
+  height="56"
+  rx="13"
+  fill="#F8F8F8"
+  stroke="#E0E0E0"/>
+
+
+<circle
+  cx="550"
+  cy="351"
+  r="15"
+  fill="#111111"
+  stroke="#F05A8A"
+  stroke-width="2"/>
+
+
+<text
+  x="550"
+  y="356"
+  text-anchor="middle"
+  font-family="Arial"
+  font-size="16"
+  font-weight="800"
+  fill="#F05A8A">
+
+  %
+
+</text>
+
+
+<text
+  x="575"
+  y="345"
+  font-family="Arial"
+  font-size="9"
+  font-weight="700"
+  fill="#777777">
+
+  DELAY INCIDENCE RATE
+
+</text>
+
+
+<rect
+  x="575"
+  y="354"
+  width="120"
+  height="7"
+  rx="4"
+  fill="#111111"/>
+
+
+<rect
+  x="575"
+  y="354"
+  width="95"
+  height="7"
+  rx="4"
+  fill="#F05A8A">
+
+  <animate
+    attributeName="width"
+    values="45;120;95"
+    dur="3s"
+    repeatCount="indefinite"/>
+
+</rect>
+
+
+<!-- ================================================= -->
+<!-- LOWER CHART 1 -->
+<!-- ================================================= -->
+
+<rect
+  x="82"
+  y="390"
+  width="330"
+  height="48"
+  rx="11"
+  fill="#111111"/>
+
+
+<text
+  x="98"
+  y="407"
+  font-family="Arial"
+  font-size="9"
+  font-weight="800"
+  fill="#FFFFFF">
+
+  TOTAL DELAY BY SERVICE TYPE
+
+</text>
+
+
+<!-- small bars -->
+
+<rect
+  x="105"
+  y="423"
+  width="35"
+  height="8"
+  rx="3"
+  fill="#F05A8A">
+
+  <animate
+    attributeName="width"
+    values="20;50;35"
+    dur="2s"
+    repeatCount="indefinite"/>
+
+</rect>
+
+
+<rect
+  x="175"
+  y="417"
+  width="35"
+  height="14"
+  rx="3"
+  fill="#FFFFFF"/>
+
+
+<!-- ================================================= -->
+<!-- LOWER CHART 2 -->
+<!-- ================================================= -->
+
+<rect
+  x="430"
+  y="390"
+  width="337"
+  height="48"
+  rx="11"
+  fill="#111111"/>
+
+
+<text
+  x="446"
+  y="407"
+  font-family="Arial"
+  font-size="9"
+  font-weight="800"
+  fill="#FFFFFF">
+
+  MONTHLY DELAY TREND
+
+</text>
+
+
+<!-- trend line -->
+
+<path
+  d="
+  M450 428
+  C475 421
+  485 425
+  510 414
+  C535 403
+  550 420
+  575 408
+  C600 397
+  625 410
+  648 400
+  C675 389
+  700 405
+  730 397
+  "
+  fill="none"
+  stroke="#F05A8A"
+  stroke-width="3"
+  stroke-linecap="round">
+
+  <animate
+    attributeName="stroke-dasharray"
+    values="0 400;400 0"
+    dur="3s"
+    repeatCount="indefinite"/>
+
+</path>
+
+
+<circle
+  cx="505"
+  cy="416"
+  r="4"
+  fill="#FFFFFF"
+  filter="url(#glow)">
+
+  <animate
+    attributeName="cx"
+    values="505;570;640;730;505"
+    dur="4s"
+    repeatCount="indefinite"/>
+
+</circle>
+
+
+<!-- ================================================= -->
+<!-- RIGHT TOP BLACK MODEL PANEL -->
+<!-- ================================================= -->
+
+<g filter="url(#shadow)">
 
   <rect
-    x="320"
-    y="220"
-    width="92"
-    height="59"
-    rx="13"
-    fill="url(#pink)"/>
-
-
-  <text
-    x="366"
-    y="246"
-    text-anchor="middle"
-    font-family="Arial"
-    font-size="12"
-    font-weight="800"
-    fill="#111111">
-
-    MERGE
-
-  </text>
-
-
-  <text
-    x="366"
-    y="264"
-    text-anchor="middle"
-    font-family="Arial"
-    font-size="10"
-    fill="#222222">
-
-    Left Join
-
-  </text>
-
-
-  <!-- ================================================= -->
-  <!-- ANALYZE BOX -->
-  <!-- ================================================= -->
-
-  <rect
-    x="435"
-    y="220"
-    width="92"
-    height="59"
-    rx="13"
+    x="825"
+    y="55"
+    width="310"
+    height="180"
+    rx="22"
     fill="#111111"/>
 
-
-  <text
-    x="481"
-    y="246"
-    text-anchor="middle"
-    font-family="Arial"
-    font-size="12"
-    font-weight="800"
-    fill="#FFFFFF">
-
-    ANALYZE
-
-  </text>
+</g>
 
 
-  <text
-    x="481"
-    y="264"
-    text-anchor="middle"
-    font-family="Arial"
-    font-size="10"
-    fill="#AAAAAA">
+<text
+  x="849"
+  y="81"
+  font-family="Arial"
+  font-size="11"
+  font-weight="800"
+  letter-spacing="1.7"
+  fill="#F05A8A">
 
-    Groupby
+  DATA MODEL
 
-  </text>
-
-
-  <!-- ================================================= -->
-  <!-- WORKFLOW ANIMATED DOT -->
-  <!-- ================================================= -->
-
-  <circle
-    cx="184"
-    cy="249"
-    r="5"
-    fill="#F05A8A"
-    filter="url(#pinkGlow)">
-
-    <animate
-      attributeName="cx"
-      values="184;299;414;184"
-      dur="4s"
-      repeatCount="indefinite"/>
-
-  </circle>
+</text>
 
 
-  <!-- ================================================= -->
-  <!-- FORMULA CARD -->
-  <!-- ================================================= -->
+<text
+  x="849"
+  y="108"
+  font-family="Arial"
+  font-size="21"
+  font-weight="800"
+  fill="#FFFFFF">
+
+  Relationship Engine
+
+</text>
+
+
+<!-- ROUTES TABLE -->
+
+<rect
+  x="849"
+  y="130"
+  width="105"
+  height="68"
+  rx="11"
+  fill="#242424"
+  stroke="#555555"/>
+
+
+<text
+  x="862"
+  y="149"
+  font-family="Arial"
+  font-size="9"
+  font-weight="800"
+  fill="#F05A8A">
+
+  ROUTES
+
+</text>
+
+
+<rect
+  x="862"
+  y="160"
+  width="68"
+  height="6"
+  rx="3"
+  fill="#777777"/>
+
+
+<rect
+  x="862"
+  y="173"
+  width="50"
+  height="6"
+  rx="3"
+  fill="#666666"/>
+
+
+<rect
+  x="862"
+  y="186"
+  width="72"
+  height="6"
+  rx="3"
+  fill="#555555"/>
+
+
+<!-- DELIVERIES TABLE -->
+
+<rect
+  x="1006"
+  y="130"
+  width="105"
+  height="68"
+  rx="11"
+  fill="#242424"
+  stroke="#555555"/>
+
+
+<text
+  x="1019"
+  y="149"
+  font-family="Arial"
+  font-size="9"
+  font-weight="800"
+  fill="#FFFFFF">
+
+  DELIVERIES
+
+</text>
+
+
+<rect
+  x="1019"
+  y="160"
+  width="68"
+  height="6"
+  rx="3"
+  fill="#777777"/>
+
+
+<rect
+  x="1019"
+  y="173"
+  width="52"
+  height="6"
+  rx="3"
+  fill="#666666"/>
+
+
+<rect
+  x="1019"
+  y="186"
+  width="73"
+  height="6"
+  rx="3"
+  fill="#555555"/>
+
+
+<!-- RELATIONSHIP LINE -->
+
+<path
+  d="M954 163
+     C972 163 975 178 989 178
+     C998 178 999 163 1006 163"
+  fill="none"
+  stroke="#F05A8A"
+  stroke-width="3"
+  stroke-dasharray="7 6">
+
+  <animate
+    attributeName="stroke-dashoffset"
+    from="0"
+    to="-26"
+    dur="1s"
+    repeatCount="indefinite"/>
+
+</path>
+
+
+<!-- relationship node -->
+
+<circle
+  cx="980"
+  cy="172"
+  r="6"
+  fill="#F05A8A"
+  filter="url(#glow)">
+
+  <animate
+    attributeName="r"
+    values="4;8;4"
+    dur="1.5s"
+    repeatCount="indefinite"/>
+
+</circle>
+
+
+<!-- Model footer -->
+
+<line
+  x1="962"
+  y1="211"
+  x2="1095"
+  y2="211"
+  stroke="#F05A8A"
+  stroke-width="2"/>
+
+
+<path
+  d="M1088 205 L1095 211 L1088 217"
+  fill="none"
+  stroke="#F05A8A"
+  stroke-width="2"/>
+
+
+<text
+  x="962"
+  y="225"
+  font-family="Arial"
+  font-size="8"
+  fill="#777777">
+
+  ROUTES FILTERS DELIVERIES
+
+</text>
+
+
+<!-- ================================================= -->
+<!-- RIGHT INTERACTIVE FILTER -->
+<!-- ================================================= -->
+
+<g filter="url(#shadow)">
 
   <rect
-    x="90"
-    y="300"
-    width="450"
-    height="27"
-    rx="7"
-    fill="#F1F1F1"/>
+    x="825"
+    y="255"
+    width="310"
+    height="195"
+    rx="22"
+    fill="#FFFFFF"
+    stroke="#111111"
+    stroke-width="1.7"/>
 
+</g>
 
-  <text
-    x="104"
-    y="318"
-    font-family="Courier New, monospace"
-    font-size="11"
-    fill="#222222">
 
-    delay_days = (actual_days - promised_days).clip(lower=0)
+<text
+  x="849"
+  y="283"
+  font-family="Arial"
+  font-size="11"
+  font-weight="800"
+  letter-spacing="1.7"
+  fill="#E85A88">
 
-  </text>
+  INTERACTIVE FILTER
+
+</text>
 
 
-  <!-- ================================================= -->
-  <!-- LEFT FOOTER -->
-  <!-- ================================================= -->
+<text
+  x="849"
+  y="311"
+  font-family="Arial"
+  font-size="21"
+  font-weight="800"
+  fill="#111111">
 
-  <text
-    x="65"
-    y="421"
-    font-family="Arial"
-    font-size="11"
-    font-weight="700"
-    letter-spacing="1.7"
-    fill="#777777">
+  Hub Slicer
 
-    PANDAS • MERGE • GROUPBY • MATPLOTLIB • EXPORT
+</text>
 
-  </text>
 
+<!-- Filter icon circle -->
 
-  <rect
-    x="65"
-    y="440"
-    width="110"
-    height="4"
-    rx="2"
-    fill="url(#pink)">
+<circle
+  cx="873"
+  cy="352"
+  r="24"
+  fill="#FFFFFF"
+  stroke="#F7D7E1"
+  stroke-width="2"/>
 
-    <animate
-      attributeName="width"
-      values="50;110;50"
-      dur="2.5s"
-      repeatCount="indefinite"/>
 
-  </rect>
+<!-- Funnel -->
 
+<path
+  d="
+  M858 340
+  L888 340
+  L878 353
+  L878 367
+  L869 371
+  L869 353
+  Z"
+  fill="none"
+  stroke="#111111"
+  stroke-width="3"
+  stroke-linejoin="round"/>
 
-  <!-- ================================================= -->
-  <!-- RIGHT BLACK PANEL -->
-  <!-- ================================================= -->
 
-  <rect
-    x="600"
-    y="42"
-    width="535"
-    height="416"
-    rx="28"
-    fill="#111111"
-    stroke="#E85A88"
-    stroke-width="2.5"
-    filter="url(#shadow)"/>
+<!-- Hub dropdown -->
 
+<rect
+  x="913"
+  y="331"
+  width="194"
+  height="35"
+  rx="9"
+  fill="#111111"/>
 
-  <!-- ================================================= -->
-  <!-- RIGHT HEADER -->
-  <!-- ================================================= -->
 
-  <text
-    x="630"
-    y="78"
-    font-family="Arial"
-    font-size="12"
-    font-weight="800"
-    letter-spacing="2"
-    fill="#F05A8A">
+<text
+  x="931"
+  y="354"
+  font-family="Arial"
+  font-size="10"
+  font-weight="800"
+  fill="#FFFFFF">
 
-    PYTHON ANALYTICS
+  ALL HUBS
 
-  </text>
+</text>
 
 
-  <text
-    x="630"
-    y="108"
-    font-family="Arial"
-    font-size="25"
-    font-weight="800"
-    fill="#FFFFFF">
+<path
+  d="M1087 345 L1093 351 L1099 345"
+  fill="none"
+  stroke="#F05A8A"
+  stroke-width="2"/>
 
-    Delivery Data Engine
 
-  </text>
+<!-- Selection progress -->
 
+<rect
+  x="913"
+  y="375"
+  width="194"
+  height="8"
+  rx="4"
+  fill="#EAEAEA"/>
 
-  <!-- Animated header particle -->
 
-  <circle
-    cx="920"
-    cy="109"
-    r="4"
-    fill="#F05A8A"
-    filter="url(#pinkGlow)">
+<rect
+  x="913"
+  y="375"
+  width="142"
+  height="8"
+  rx="4"
+  fill="#F05A8A">
 
-    <animate
-      attributeName="r"
-      values="3;7;3"
-      dur="1.6s"
-      repeatCount="indefinite"/>
+  <animate
+    attributeName="width"
+    values="70;170;142"
+    dur="3s"
+    repeatCount="indefinite"/>
 
-  </circle>
+</rect>
 
 
-  <!-- ================================================= -->
-  <!-- DATA TABLE -->
-  <!-- ================================================= -->
+<text
+  x="913"
+  y="411"
+  font-family="Arial"
+  font-size="9"
+  fill="#777777">
 
-  <rect
-    x="630"
-    y="135"
-    width="276"
-    height="183"
-    rx="15"
-    fill="#FFFFFF"/>
+  Cards • Charts • Trends
 
+</text>
 
-  <!-- Table Header -->
 
-  <rect
-    x="630"
-    y="135"
-    width="276"
-    height="38"
-    rx="15"
-    fill="url(#pink)"/>
+<text
+  x="913"
+  y="429"
+  font-family="Arial"
+  font-size="9"
+  fill="#777777">
 
+  Respond to the active selection
 
-  <text
-    x="644"
-    y="158"
-    font-family="Arial"
-    font-size="9"
-    font-weight="800"
-    fill="#111111">
+</text>
 
-    ROUTE
 
-  </text>
+<!-- ================================================= -->
+<!-- DECORATIVE FLOATING PARTICLES -->
+<!-- ================================================= -->
 
+<circle
+  cx="810"
+  cy="82"
+  r="4"
+  fill="#F05A8A"
+  filter="url(#glow)">
 
-  <text
-    x="712"
-    y="158"
-    font-family="Arial"
-    font-size="9"
-    font-weight="800"
-    fill="#111111">
+  <animate
+    attributeName="cy"
+    values="82;72;82"
+    dur="2s"
+    repeatCount="indefinite"/>
 
-    SERVICE
+</circle>
 
-  </text>
 
+<circle
+  cx="805"
+  cy="235"
+  r="3"
+  fill="#F05A8A">
 
-  <text
-    x="780"
-    y="158"
-    font-family="Arial"
-    font-size="9"
-    font-weight="800"
-    fill="#111111">
+  <animate
+    attributeName="cx"
+    values="805;815;805"
+    dur="2s"
+    repeatCount="indefinite"/>
 
-    DELAY
+</circle>
 
-  </text>
 
+<circle
+  cx="1145"
+  cy="250"
+  r="4"
+  fill="#F7A1BB">
 
-  <text
-    x="850"
-    y="158"
-    font-family="Arial"
-    font-size="9"
-    font-weight="800"
-    fill="#111111">
+  <animate
+    attributeName="cy"
+    values="250;240;250"
+    dur="2.2s"
+    repeatCount="indefinite"/>
 
-    MONTH
+</circle>
 
-  </text>
 
+<!-- ================================================= -->
+<!-- BOTTOM LABEL -->
+<!-- ================================================= -->
 
-  <!-- ================================================= -->
-  <!-- TABLE DATA -->
-  <!-- ================================================= -->
+<text
+  x="60"
+  y="480"
+  font-family="Arial"
+  font-size="11"
+  font-weight="700"
+  letter-spacing="1.5"
+  fill="#777777">
 
-  <g
-    font-family="Arial"
-    font-size="8"
-    fill="#777777">
+  POWER QUERY • DATA MODEL • DAX • SLICERS • INTERACTIVE VISUALS
 
-    <text x="644" y="193">
-      Route
-    </text>
+</text>
 
-    <text x="712" y="193">
-      Standard
-    </text>
 
-    <text x="780" y="193">
-      Delay
-    </text>
+<rect
+  x="60"
+  y="488"
+  width="115"
+  height="4"
+  rx="2"
+  fill="url(#rose)">
 
-    <text x="850" y="193">
-      Month
-    </text>
+  <animate
+    attributeName="width"
+    values="50;115;50"
+    dur="2.5s"
+    repeatCount="indefinite"/>
 
-
-    <text x="644" y="217">
-      Route
-    </text>
-
-    <text x="712" y="217">
-      Express
-    </text>
-
-    <text x="780" y="217">
-      Delay
-    </text>
-
-    <text x="850" y="217">
-      Month
-    </text>
-
-
-    <text x="644" y="241">
-      Route
-    </text>
-
-    <text x="712" y="241">
-      Standard
-    </text>
-
-    <text x="780" y="241">
-      Delay
-    </text>
-
-    <text x="850" y="241">
-      Month
-    </text>
-
-
-    <text x="644" y="265">
-      Route
-    </text>
-
-    <text x="712" y="265">
-      Express
-    </text>
-
-    <text x="780" y="265">
-      Delay
-    </text>
-
-    <text x="850" y="265">
-      Month
-    </text>
-
-
-    <text x="644" y="289">
-      Route
-    </text>
-
-    <text x="712" y="289">
-      Standard
-    </text>
-
-    <text x="780" y="289">
-      Delay
-    </text>
-
-    <text x="850" y="289">
-      Month
-    </text>
-
-  </g>
-
-
-  <!-- ================================================= -->
-  <!-- TABLE GRID -->
-  <!-- ================================================= -->
-
-  <g
-    stroke="#DDDDDD"
-    stroke-width="1">
-
-    <line
-      x1="698"
-      y1="173"
-      x2="698"
-      y2="318"/>
-
-    <line
-      x1="767"
-      y1="173"
-      x2="767"
-      y2="318"/>
-
-    <line
-      x1="837"
-      y1="173"
-      x2="837"
-      y2="318"/>
-
-
-    <line
-      x1="630"
-      y1="197"
-      x2="906"
-      y2="197"/>
-
-    <line
-      x1="630"
-      y1="221"
-      x2="906"
-      y2="221"/>
-
-    <line
-      x1="630"
-      y1="245"
-      x2="906"
-      y2="245"/>
-
-    <line
-      x1="630"
-      y1="269"
-      x2="906"
-      y2="269"/>
-
-    <line
-      x1="630"
-      y1="293"
-      x2="906"
-      y2="293"/>
-
-  </g>
-
-
-  <!-- ================================================= -->
-  <!-- ANIMATED TABLE SELECTION -->
-  <!-- ================================================= -->
-
-  <rect
-    x="790"
-    y="276"
-    width="72"
-    height="29"
-    fill="none"
-    stroke="#F05A8A"
-    stroke-width="3">
-
-    <animate
-      attributeName="x"
-      values="700;790;840;700"
-      dur="4s"
-      repeatCount="indefinite"/>
-
-  </rect>
-
-
-  <!-- ================================================= -->
-  <!-- MONTHLY DELAY PANEL -->
-  <!-- ================================================= -->
-
-  <rect
-    x="935"
-    y="135"
-    width="166"
-    height="184"
-    rx="15"
-    fill="#1B1B1B"
-    stroke="#444444"
-    stroke-width="1"/>
-
-
-  <text
-    x="952"
-    y="160"
-    font-family="Arial"
-    font-size="10"
-    font-weight="800"
-    fill="#FFFFFF">
-
-    MONTHLY DELAY
-
-  </text>
-
-
-  <!-- Chart axes -->
-
-  <line
-    x1="960"
-    y1="285"
-    x2="1077"
-    y2="285"
-    stroke="#777777"
-    stroke-width="2"/>
-
-
-  <line
-    x1="960"
-    y1="190"
-    x2="960"
-    y2="285"
-    stroke="#777777"
-    stroke-width="2"/>
-
-
-  <!-- ================================================= -->
-  <!-- BAR 1 -->
-  <!-- ================================================= -->
-
-  <rect
-    x="977"
-    y="230"
-    width="18"
-    height="55"
-    rx="2"
-    fill="#F05A8A">
-
-    <animate
-      attributeName="height"
-      values="15;55;15"
-      dur="2.5s"
-      repeatCount="indefinite"/>
-
-    <animate
-      attributeName="y"
-      values="270;230;270"
-      dur="2.5s"
-      repeatCount="indefinite"/>
-
-  </rect>
-
-
-  <!-- ================================================= -->
-  <!-- BAR 2 -->
-  <!-- ================================================= -->
-
-  <rect
-    x="1010"
-    y="239"
-    width="18"
-    height="46"
-    rx="2"
-    fill="#FFFFFF">
-
-    <animate
-      attributeName="height"
-      values="10;46;10"
-      dur="2.5s"
-      begin=".3s"
-      repeatCount="indefinite"/>
-
-    <animate
-      attributeName="y"
-      values="275;239;275"
-      dur="2.5s"
-      begin=".3s"
-      repeatCount="indefinite"/>
-
-  </rect>
-
-
-  <!-- ================================================= -->
-  <!-- BAR 3 -->
-  <!-- ================================================= -->
-
-  <rect
-    x="1043"
-    y="251"
-    width="18"
-    height="34"
-    rx="2"
-    fill="#F05A8A">
-
-    <animate
-      attributeName="height"
-      values="8;34;8"
-      dur="2.5s"
-      begin=".6s"
-      repeatCount="indefinite"/>
-
-    <animate
-      attributeName="y"
-      values="277;251;277"
-      dur="2.5s"
-      begin=".6s"
-      repeatCount="indefinite"/>
-
-  </rect>
-
-
-  <!-- ================================================= -->
-  <!-- CHART PULSE -->
-  <!-- ================================================= -->
-
-  <circle
-    cx="1052"
-    cy="207"
-    r="4"
-    fill="#F05A8A"
-    filter="url(#pinkGlow)">
-
-    <animate
-      attributeName="cy"
-      values="207;195;207"
-      dur="1.8s"
-      repeatCount="indefinite"/>
-
-  </circle>
-
-
-  <!-- ================================================= -->
-  <!-- PYTHON TERMINAL -->
-  <!-- ================================================= -->
-
-  <rect
-    x="630"
-    y="340"
-    width="471"
-    height="88"
-    rx="15"
-    fill="#191919"
-    stroke="#333333"
-    stroke-width="1"/>
-
-
-  <!-- Terminal dots -->
-
-  <circle
-    cx="650"
-    cy="360"
-    r="5"
-    fill="#A63F61"/>
-
-
-  <circle
-    cx="668"
-    cy="360"
-    r="5"
-    fill="#666666"/>
-
-
-  <circle
-    cx="686"
-    cy="360"
-    r="5"
-    fill="#555555"/>
-
-
-  <!-- Python command -->
-
-  <text
-    x="650"
-    y="389"
-    font-family="Courier New"
-    font-size="11"
-    fill="#F05A8A">
-
-    &gt; pandas.merge(deliveries, routes)
-
-  </text>
-
-
-  <text
-    x="650"
-    y="407"
-    font-family="Courier New"
-    font-size="11"
-    fill="#BBBBBB">
-
-    &gt; clean_data → service_summary → chart
-
-  </text>
-
-
-  <!-- ================================================= -->
-  <!-- TERMINAL CURSOR -->
-  <!-- ================================================= -->
-
-  <rect
-    x="945"
-    y="398"
-    width="7"
-    height="11"
-    fill="#F05A8A">
-
-    <animate
-      attributeName="opacity"
-      values="1;0;1"
-      dur="1s"
-      repeatCount="indefinite"/>
-
-  </rect>
-
-
-  <!-- ================================================= -->
-  <!-- MOVING DATA PARTICLE -->
-  <!-- ================================================= -->
-
-  <circle
-    r="5"
-    fill="#F05A8A"
-    filter="url(#pinkGlow)">
-
-    <animateMotion
-      dur="4s"
-      repeatCount="indefinite">
-
-      <mpath href="#dataFlow"/>
-
-    </animateMotion>
-
-  </circle>
-
-
-  <!-- ================================================= -->
-  <!-- DECORATIVE PINK PARTICLES -->
-  <!-- ================================================= -->
-
-  <circle
-    cx="910"
-    cy="322"
-    r="3"
-    fill="#F05A8A">
-
-    <animate
-      attributeName="cy"
-      values="322;312;322"
-      dur="2s"
-      repeatCount="indefinite"/>
-
-  </circle>
-
-
-  <circle
-    cx="1110"
-    cy="345"
-    r="3"
-    fill="#F05A8A">
-
-    <animate
-      attributeName="cx"
-      values="1110;1120;1110"
-      dur="2.2s"
-      repeatCount="indefinite"/>
-
-  </circle>
-
-
-  <!-- ================================================= -->
-  <!-- SMALL FLOATING DOT -->
-  <!-- ================================================= -->
-
-  <circle
-    cx="1088"
-    cy="112"
-    r="2"
-    fill="#F7A1BB">
-
-    <animate
-      attributeName="cy"
-      values="112;104;112"
-      dur="2s"
-      repeatCount="indefinite"/>
-
-  </circle>
+</rect>
 
 
 </svg>
