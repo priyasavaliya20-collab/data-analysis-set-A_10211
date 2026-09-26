@@ -8,7 +8,8 @@
 ---
 
 ## 🛠️ Tools Used
-
+<div>
+        
 <img src="https://img.shields.io/badge/SQL-PostgreSQL%2FMySQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white"/>
 <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
 <img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white"/>
@@ -24,6 +25,8 @@
 <img src="https://img.shields.io/badge/PivotTable-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white"/>
 <img src="https://img.shields.io/badge/SUMIFS-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white"/>
 <img src="https://img.shields.io/badge/DAX_Measures-Calc--Column%20%7C%20SUMX%20%7C%20DIVIDE-EC4899?style=for-the-badge"/>
+
+</div>
 
 ---
 
