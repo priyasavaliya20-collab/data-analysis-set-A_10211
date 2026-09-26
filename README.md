@@ -1,6 +1,7 @@
 
+<img width="1200" height="500" alt="pic" src="https://github.com/user-attachments/assets/ffb74c70-123b-45c9-a100-c91a5b12ac6d" />
 
-**Student:** [Your Name] — [Student ID]
+**Student:** [Priya Savaliya ] — [Student ID :- 10211]
 **Assigned Set:** Set A (`data-analysis-set-A_10211`)
 **Repo:** https://github.com/priyasavaliya20-collab/data-analysis-set-A_10211
 
@@ -133,7 +134,19 @@ df['is_delayed'] = df['actual_days'] > df['promised_days']
 
 ---
 
-## 🐘 SQL — Setup & Run
+## 📊 Excel Sheet Guide
+
+| Sheet | Purpose |
+|---|---|
+| `Raw` | Original 13-row data |
+| `Lookup` | Route master (VLOOKUP source) |
+| `Clean` | Deduped + merged data, cleaning check (13→12) |
+| `Summary` | Hub totals + PivotTable (service_type × month) |
+
+## 🐘 SQL Setup & Query Execution Steps
+
+<img width="1200" height="500" alt="pic" src="https://github.com/user-attachments/assets/023951c6-d7b0-419e-9872-8d33ce6ba275" />
+
 
 ```bash
 psql -U <user> -d <db> -f sql/setup.sql
@@ -161,6 +174,10 @@ FROM deliveries GROUP BY hub ORDER BY total_delay_days DESC LIMIT 2;
 
 ## 🐍 Python — Setup & Run
 
+<img width="1200" height="500" alt="pic" src="https://github.com/user-attachments/assets/d9a3949c-2d2e-4168-9ef5-2835e226759b" />
+
+
+
 ```bash
 pip install -r requirements.txt
 jupyter notebook python/Delivery_Delay_Analysis.ipynb
@@ -178,18 +195,17 @@ service_summary = df.groupby('service_type').agg(
 
 ---
 
-## 📊 Excel Sheet Guide
 
-| Sheet | Purpose |
-|---|---|
-| `Raw` | Original 13-row data |
-| `Lookup` | Route master (VLOOKUP source) |
-| `Clean` | Deduped + merged data, cleaning check (13→12) |
-| `Summary` | Hub totals + PivotTable (service_type × month) |
 
 ---
 
 ## ⚡ Power BI — Refresh Steps
+
+
+
+
+
+
 
 ```
 Home → Transform Data → Data Source Settings
