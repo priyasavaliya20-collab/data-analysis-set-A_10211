@@ -1,0 +1,258 @@
+<!-- ================================================= -->
+<!-- ANIMATED RACING CAR + TRACK -->
+<!-- ================================================= -->
+
+<g id="racingScene">
+
+  <!-- TRACK -->
+
+  <rect x="500"
+        y="430"
+        width="620"
+        height="55"
+        rx="12"
+        fill="#111111"/>
+
+  <!-- Track Border -->
+
+  <line x1="500"
+        y1="435"
+        x2="1120"
+        y2="435"
+        stroke="#F27BA6"
+        stroke-width="3"/>
+
+  <line x1="500"
+        y1="480"
+        x2="1120"
+        y2="480"
+        stroke="#F27BA6"
+        stroke-width="3"/>
+
+
+  <!-- Moving Road Markings -->
+
+  <g stroke="#FFFFFF"
+     stroke-width="4"
+     stroke-linecap="round">
+
+    <line x1="520" y1="458" x2="555" y2="458"/>
+    <line x1="590" y1="458" x2="625" y2="458"/>
+    <line x1="660" y1="458" x2="695" y2="458"/>
+    <line x1="730" y1="458" x2="765" y2="458"/>
+    <line x1="800" y1="458" x2="835" y2="458"/>
+    <line x1="870" y1="458" x2="905" y2="458"/>
+    <line x1="940" y1="458" x2="975" y2="458"/>
+    <line x1="1010" y1="458" x2="1045" y2="458"/>
+    <line x1="1080" y1="458" x2="1115" y2="458"/>
+
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="0 0; -70 0; -140 0; -70 0; 0 0"
+      dur="2s"
+      repeatCount="indefinite"/>
+
+  </g>
+
+
+  <!-- ============================================= -->
+  <!-- CAR -->
+  <!-- ============================================= -->
+
+  <g id="animatedCar">
+
+    <!-- Car Shadow -->
+
+    <ellipse cx="0"
+             cy="20"
+             rx="58"
+             ry="7"
+             fill="#000000"
+             opacity="0.35"/>
+
+
+    <!-- Main Car Body -->
+
+    <path d="
+      M-58,5
+      L-48,-18
+      L-20,-25
+      L5,-25
+      L28,-12
+      L55,-8
+      L62,5
+      L58,14
+      L-55,14
+      Z"
+      fill="#F27BA6"/>
+
+
+    <!-- Car Roof -->
+
+    <path d="
+      M-25,-24
+      L-8,-43
+      L22,-43
+      L40,-13
+      L28,-12
+      L5,-25
+      Z"
+      fill="#E85D8E"/>
+
+
+    <!-- Front Window -->
+
+    <path d="
+      M7,-39
+      L21,-39
+      L34,-18
+      L12,-20
+      Z"
+      fill="#181818"/>
+
+
+    <!-- Back Window -->
+
+    <path d="
+      M-6,-39
+      L-23,-20
+      L8,-20
+      L3,-39
+      Z"
+      fill="#181818"/>
+
+
+    <!-- Headlight -->
+
+    <ellipse cx="53"
+             cy="-2"
+             rx="5"
+             ry="4"
+             fill="#FFFFFF">
+
+      <animate
+        attributeName="opacity"
+        values="0.4;1;0.4"
+        dur="1s"
+        repeatCount="indefinite"/>
+
+    </ellipse>
+
+
+    <!-- Tail Light -->
+
+    <rect x="-57"
+          y="-2"
+          width="6"
+          height="8"
+          rx="2"
+          fill="#E85D8E"/>
+
+
+    <!-- ============================================= -->
+    <!-- WHEELS -->
+    <!-- ============================================= -->
+
+    <g id="carWheels">
+
+      <!-- Back Wheel -->
+
+      <circle cx="-35"
+              cy="13"
+              r="13"
+              fill="#090909"/>
+
+      <circle cx="-35"
+              cy="13"
+              r="5"
+              fill="#777777"/>
+
+
+      <!-- Front Wheel -->
+
+      <circle cx="38"
+              cy="13"
+              r="13"
+              fill="#090909"/>
+
+      <circle cx="38"
+              cy="13"
+              r="5"
+              fill="#777777"/>
+
+
+      <!-- Wheel Rotation -->
+
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="0 0 13"
+        to="360 0 13"
+        dur="0.7s"
+        repeatCount="indefinite"/>
+
+    </g>
+
+
+    <!-- ============================================= -->
+    <!-- CAR MOVEMENT -->
+    <!-- ============================================= -->
+
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="
+        0 0;
+        100 0;
+        220 0;
+        340 0;
+        440 0;
+        340 0;
+        220 0;
+        100 0;
+        0 0"
+      dur="8s"
+      repeatCount="indefinite"/>
+
+  </g>
+
+
+  <!-- ============================================= -->
+  <!-- SPEED LINES -->
+  <!-- ============================================= -->
+
+  <g stroke="#F27BA6"
+     stroke-width="3"
+     stroke-linecap="round"
+     opacity="0.8">
+
+    <line x1="515" y1="420" x2="550" y2="420">
+      <animate
+        attributeName="x1"
+        values="515;480;515"
+        dur="1s"
+        repeatCount="indefinite"/>
+      <animate
+        attributeName="x2"
+        values="550;515;550"
+        dur="1s"
+        repeatCount="indefinite"/>
+    </line>
+
+    <line x1="530" y1="410" x2="560" y2="410">
+      <animate
+        attributeName="x1"
+        values="530;495;530"
+        dur="1.2s"
+        repeatCount="indefinite"/>
+      <animate
+        attributeName="x2"
+        values="560;525;560"
+        dur="1.2s"
+        repeatCount="indefinite"/>
+    </line>
+
+  </g>
+
+</g>
