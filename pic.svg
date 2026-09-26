@@ -1,68 +1,43 @@
 <svg xmlns="http://www.w3.org/2000/svg"
-     width="1200"
-     height="500"
-     viewBox="0 0 1200 500">
+     width="1600"
+     height="820"
+     viewBox="0 0 1600 820">
 
   <defs>
 
-    <!-- ROSE THEME -->
-    <linearGradient id="rose"
-                    x1="0" y1="0"
-                    x2="1" y2="1">
-      <stop offset="0%" stop-color="#F7A1BB"/>
-      <stop offset="50%" stop-color="#F05A8A"/>
-      <stop offset="100%" stop-color="#D94F7A"/>
+    <!-- ROSE PINK GRADIENT -->
+    <linearGradient id="rose" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E91E63"/>
+      <stop offset="100%" stop-color="#FF6F9F"/>
     </linearGradient>
 
-    <linearGradient id="softRose"
-                    x1="0" y1="0"
-                    x2="1" y2="0">
-      <stop offset="0%" stop-color="#F7A1BB"/>
-      <stop offset="100%" stop-color="#F05A8A"/>
+    <!-- DARK -->
+    <linearGradient id="dark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0D0D0D"/>
+      <stop offset="100%" stop-color="#242424"/>
     </linearGradient>
 
     <!-- GRID -->
     <pattern id="grid"
-             width="28"
-             height="28"
+             width="32"
+             height="32"
              patternUnits="userSpaceOnUse">
-
-      <path d="M28 0H0V28"
+      <path d="M32 0H0V32"
             fill="none"
-            stroke="#E9E9E9"
-            stroke-width="1"/>
+            stroke="#000000"
+            stroke-opacity=".035"/>
     </pattern>
 
     <!-- SHADOW -->
     <filter id="shadow"
-            x="-30%"
-            y="-30%"
-            width="160%"
-            height="160%">
-
-      <feDropShadow
-        dx="0"
-        dy="7"
-        stdDeviation="7"
-        flood-opacity=".15"/>
-    </filter>
-
-    <!-- GLOW -->
-    <filter id="glow"
-            x="-100%"
-            y="-100%"
-            width="300%"
-            height="300%">
-
-      <feGaussianBlur
-        stdDeviation="4"
-        result="blur"/>
-
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-
+            x="-20%"
+            y="-20%"
+            width="140%"
+            height="140%">
+      <feDropShadow dx="0"
+                    dy="8"
+                    stdDeviation="10"
+                    flood-opacity=".14"/>
     </filter>
 
   </defs>
@@ -72,926 +47,1146 @@
   <!-- BACKGROUND -->
   <!-- ================================================= -->
 
-  <rect
-    width="1200"
-    height="500"
-    fill="#FFFFFF"/>
+  <rect width="1600"
+        height="820"
+        fill="#FFFFFF"/>
 
-  <rect
-    y="7"
-    width="1200"
-    height="493"
-    fill="url(#grid)"
-    opacity=".55"/>
+  <rect width="1600"
+        height="820"
+        fill="url(#grid)"/>
 
+  <!-- ROSE TOP LINE -->
 
-  <!-- ================================================= -->
-  <!-- TOP ROSE LINE -->
-  <!-- ================================================= -->
-
-  <rect
-    x="0"
-    y="0"
-    width="1200"
-    height="7"
-    fill="url(#rose)">
-
-    <animate
-      attributeName="opacity"
-      values=".75;1;.75"
-      dur="2.5s"
-      repeatCount="indefinite"/>
-
-  </rect>
+  <rect width="1600"
+        height="7"
+        fill="url(#rose)"/>
 
 
   <!-- ================================================= -->
-  <!-- LEFT HEADER -->
+  <!-- HEADER -->
   <!-- ================================================= -->
 
-  <text
-    x="65"
-    y="57"
-    font-family="Arial, Helvetica, sans-serif"
-    font-size="13"
-    font-weight="700"
-    letter-spacing="2"
-    fill="#E85A88">
-
-    TASK ONE • DATA ANALYSIS
-
+  <text x="70"
+        y="62"
+        font-family="Arial, sans-serif"
+        font-size="20"
+        font-weight="800"
+        letter-spacing="2.8"
+        fill="#E91E63">
+    END-TO-END DATA ANALYTICS WORKFLOW
   </text>
 
-
-  <text
-    x="65"
-    y="105"
-    font-family="Arial, Helvetica, sans-serif"
-    font-size="48"
-    font-weight="800"
-    fill="#111111">
-
-    Excel
-
+  <text x="70"
+        y="112"
+        font-family="Arial, sans-serif"
+        font-size="44"
+        font-weight="800"
+        fill="#111111">
+    Delivery Delay Analysis
   </text>
 
-
-  <text
-    x="65"
-    y="135"
-    font-family="Arial, Helvetica, sans-serif"
-    font-size="17"
-    fill="#666666">
-
-    Import • Clean • Lookup • Summarize
-
+  <text x="70"
+        y="142"
+        font-family="Arial, sans-serif"
+        font-size="17"
+        fill="#666666">
+    Excel → SQL → Python → Power BI → Cross-Check
   </text>
 
 
   <!-- ================================================= -->
-  <!-- WORKFLOW CARD -->
+  <!-- MAIN CONTAINER -->
   <!-- ================================================= -->
 
-  <g filter="url(#shadow)">
+  <rect x="55"
+        y="175"
+        width="1490"
+        height="570"
+        rx="30"
+        fill="#FFFFFF"
+        stroke="#111111"
+        stroke-width="1.5"
+        filter="url(#shadow)"/>
 
-    <rect
-      x="65"
-      y="165"
-      width="500"
-      height="185"
-      rx="18"
-      fill="#FFFFFF"
-      stroke="#111111"
-      stroke-width="1.7"/>
+
+  <!-- ================================================= -->
+  <!-- WORKFLOW LINE -->
+  <!-- ================================================= -->
+
+  <path d="M115 435
+           C260 435 350 435 485 435
+           S730 435 865 435
+           S1110 435 1245 435
+           S1370 435 1485 435"
+        fill="none"
+        stroke="#E7E7E7"
+        stroke-width="5"
+        stroke-linecap="round"/>
+
+  <path d="M115 435
+           C260 435 350 435 485 435
+           S730 435 865 435
+           S1110 435 1245 435
+           S1370 435 1485 435"
+        fill="none"
+        stroke="#E91E63"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-dasharray="12 18">
+
+    <animate attributeName="stroke-dashoffset"
+             values="0;-60"
+             dur="2s"
+             repeatCount="indefinite"/>
+
+  </path>
+
+
+  <!-- ================================================= -->
+  <!-- CARD 1 : DATA SETUP -->
+  <!-- ================================================= -->
+
+  <g transform="translate(80 235)">
+
+    <rect width="265"
+          height="365"
+          rx="22"
+          fill="#111111"
+          filter="url(#shadow)"/>
+
+    <text x="25" y="35"
+          font-family="Arial"
+          font-size="11"
+          font-weight="700"
+          letter-spacing="1.5"
+          fill="#E91E63">
+      STEP 01
+    </text>
+
+    <text x="25" y="65"
+          font-family="Arial"
+          font-size="21"
+          font-weight="800"
+          fill="#FFFFFF">
+      Data Setup
+    </text>
+
+    <text x="25" y="87"
+          font-family="Arial"
+          font-size="12"
+          fill="#999999">
+      Raw source files
+    </text>
+
+
+    <!-- DATABASE -->
+
+    <g transform="translate(62 112)">
+
+      <ellipse cx="70"
+               cy="18"
+               rx="70"
+               ry="18"
+               fill="#E91E63"/>
+
+      <path d="M0 18
+               V82
+               C0 102 140 102 140 82
+               V18"
+            fill="#202020"
+            stroke="#E91E63"
+            stroke-width="3"/>
+
+      <ellipse cx="70"
+               cy="82"
+               rx="70"
+               ry="18"
+               fill="#202020"
+               stroke="#E91E63"
+               stroke-width="3"/>
+
+      <ellipse cx="70"
+               cy="18"
+               rx="70"
+               ry="18"
+               fill="#E91E63"/>
+
+      <ellipse cx="70"
+               cy="18"
+               rx="45"
+               ry="9"
+               fill="#111111"/>
+
+      <ellipse cx="70"
+               cy="18"
+               rx="45"
+               ry="9"
+               fill="none"
+               stroke="#FFFFFF"
+               stroke-width="2"
+               opacity=".7">
+
+        <animate attributeName="rx"
+                 values="20;50;20"
+                 dur="2s"
+                 repeatCount="indefinite"/>
+
+        <animate attributeName="opacity"
+                 values=".8;0;.8"
+                 dur="2s"
+                 repeatCount="indefinite"/>
+
+      </ellipse>
+
+    </g>
+
+
+    <!-- FILE 1 -->
+
+    <rect x="25"
+          y="225"
+          width="215"
+          height="38"
+          rx="9"
+          fill="#202020"/>
+
+    <circle cx="43"
+            cy="244"
+            r="5"
+            fill="#E91E63"/>
+
+    <text x="58"
+          y="249"
+          font-family="monospace"
+          font-size="11"
+          fill="#FFFFFF">
+      deliveries.csv
+    </text>
+
+
+    <!-- FILE 2 -->
+
+    <rect x="25"
+          y="272"
+          width="215"
+          height="38"
+          rx="9"
+          fill="#202020"/>
+
+    <circle cx="43"
+            cy="291"
+            r="5"
+            fill="#E91E63"/>
+
+    <text x="58"
+          y="296"
+          font-family="monospace"
+          font-size="11"
+          fill="#FFFFFF">
+      routes.csv
+    </text>
+
+
+    <text x="25"
+          y="338"
+          font-family="Arial"
+          font-size="10"
+          fill="#999999">
+      LOADING SOURCE DATA
+    </text>
+
+    <rect x="25"
+          y="348"
+          width="215"
+          height="5"
+          rx="3"
+          fill="#333333"/>
+
+    <rect x="25"
+          y="348"
+          width="70"
+          height="5"
+          rx="3"
+          fill="#E91E63">
+
+      <animate attributeName="width"
+               values="40;210;90;40"
+               dur="2.4s"
+               repeatCount="indefinite"/>
+
+    </rect>
 
   </g>
 
 
-  <text
-    x="90"
-    y="197"
-    font-family="Arial"
-    font-size="12"
-    font-weight="800"
-    letter-spacing="1.5"
-    fill="#222222">
-
-    ANALYSIS WORKFLOW
-
-  </text>
-
-
-  <!-- RAW -->
-
-  <rect
-    x="90"
-    y="215"
-    width="105"
-    height="56"
-    rx="13"
-    fill="#111111"/>
-
-
-  <text
-    x="142"
-    y="239"
-    text-anchor="middle"
-    font-family="Arial"
-    font-size="11"
-    font-weight="800"
-    fill="#FFFFFF">
-
-    RAW
-
-  </text>
-
-
-  <text
-    x="142"
-    y="257"
-    text-anchor="middle"
-    font-family="Arial"
-    font-size="10"
-    fill="#AAAAAA">
-
-    Import
-
-  </text>
-
-
-  <!-- CONNECTOR -->
-
-  <line
-    x1="195"
-    y1="243"
-    x2="214"
-    y2="243"
-    stroke="#E85A88"
-    stroke-width="2"/>
-
-
-  <circle
-    cx="205"
-    cy="243"
-    r="4"
-    fill="#F05A8A"
-    filter="url(#glow)">
-
-    <animate
-      attributeName="r"
-      values="3;7;3"
-      dur="1.5s"
-      repeatCount="indefinite"/>
-
-  </circle>
-
-
-  <!-- CLEAN -->
-
-  <rect
-    x="214"
-    y="215"
-    width="105"
-    height="56"
-    rx="13"
-    fill="#FFFFFF"
-    stroke="#E85A88"
-    stroke-width="2"/>
-
-
-  <text
-    x="266"
-    y="239"
-    text-anchor="middle"
-    font-family="Arial"
-    font-size="11"
-    font-weight="800"
-    fill="#222222">
-
-    CLEAN
-
-  </text>
-
-
-  <text
-    x="266"
-    y="257"
-    text-anchor="middle"
-    font-family="Arial"
-    font-size="10"
-    fill="#777777">
-
-    Remove duplicate
-
-  </text>
-
-
-  <!-- CONNECTOR -->
-
-  <line
-    x1="319"
-    y1="243"
-    x2="340"
-    y2="243"
-    stroke="#E85A88"
-    stroke-width="2"/>
-
-
-  <circle
-    cx="330"
-    cy="243"
-    r="4"
-    fill="#F05A8A">
-
-    <animate
-      attributeName="cx"
-      values="323;336;323"
-      dur="1.5s"
-      repeatCount="indefinite"/>
-
-  </circle>
-
-
-  <!-- LOOKUP -->
-
-  <rect
-    x="340"
-    y="215"
-    width="105"
-    height="56"
-    rx="13"
-    fill="url(#rose)"/>
-
-
-  <text
-    x="392"
-    y="239"
-    text-anchor="middle"
-    font-family="Arial"
-    font-size="11"
-    font-weight="800"
-    fill="#111111">
-
-    LOOKUP
-
-  </text>
-
-
-  <text
-    x="392"
-    y="257"
-    text-anchor="middle"
-    font-family="Arial"
-    font-size="10"
-    fill="#222222">
-
-    XLOOKUP
-
-  </text>
-
-
-  <!-- CONNECTOR -->
-
-  <line
-    x1="445"
-    y1="243"
-    x2="466"
-    y2="243"
-    stroke="#E85A88"
-    stroke-width="2"/>
-
-
-  <circle
-    cx="456"
-    cy="243"
-    r="4"
-    fill="#F05A8A"
-    filter="url(#glow)">
-
-    <animate
-      attributeName="r"
-      values="3;7;3"
-      dur="1.5s"
-      repeatCount="indefinite"/>
-
-  </circle>
-
-
-  <!-- SUMMARY -->
-
-  <rect
-    x="466"
-    y="215"
-    width="75"
-    height="56"
-    rx="13"
-    fill="#111111"/>
-
-
-  <text
-    x="503"
-    y="239"
-    text-anchor="middle"
-    font-family="Arial"
-    font-size="11"
-    font-weight="800"
-    fill="#FFFFFF">
-
-    SUMMARY
-
-  </text>
-
-
-  <text
-    x="503"
-    y="257"
-    text-anchor="middle"
-    font-family="Arial"
-    font-size="10"
-    fill="#AAAAAA">
-
-    Pivot
-
-  </text>
-
-
-  <!-- FORMULA -->
-
-  <rect
-    x="90"
-    y="292"
-    width="450"
-    height="30"
-    rx="7"
-    fill="#F1F1F1"/>
-
-
-  <text
-    x="104"
-    y="312"
-    font-family="Courier New, monospace"
-    font-size="11"
-    fill="#222222">
-
-    =MAX(actual_days-promised_days,0)
-
-  </text>
-
-
   <!-- ================================================= -->
-  <!-- LEFT FOOTER -->
+  <!-- CARD 2 : EXCEL -->
   <!-- ================================================= -->
 
-  <text
-    x="65"
-    y="421"
-    font-family="Arial"
-    font-size="11"
-    font-weight="700"
-    letter-spacing="1.7"
-    fill="#777777">
+  <g transform="translate(370 235)">
 
-    CLEAN DATA • XLOOKUP • SUMIFS • PIVOTTABLE • CHART
+    <rect width="265"
+          height="365"
+          rx="22"
+          fill="#FFFFFF"
+          stroke="#111111"
+          stroke-width="1.5"
+          filter="url(#shadow)"/>
 
-  </text>
+    <text x="25"
+          y="35"
+          font-family="Arial"
+          font-size="11"
+          font-weight="700"
+          letter-spacing="1.5"
+          fill="#E91E63">
+      STEP 02
+    </text>
+
+    <text x="25"
+          y="65"
+          font-family="Arial"
+          font-size="21"
+          font-weight="800"
+          fill="#111111">
+      Excel
+    </text>
+
+    <text x="25"
+          y="87"
+          font-family="Arial"
+          font-size="12"
+          fill="#666666">
+      Clean &amp; summarize
+    </text>
 
 
-  <rect
-    x="65"
-    y="440"
-    width="110"
-    height="4"
-    rx="2"
-    fill="url(#rose)">
+    <!-- SPREADSHEET -->
 
-    <animate
-      attributeName="width"
-      values="50;110;50"
-      dur="2.5s"
-      repeatCount="indefinite"/>
+    <g transform="translate(25 112)">
 
-  </rect>
+      <rect width="215"
+            height="135"
+            rx="10"
+            fill="#F7F7F7"
+            stroke="#111111"/>
+
+      <rect width="215"
+            height="30"
+            rx="10"
+            fill="#E91E63"/>
+
+      <rect y="20"
+            width="215"
+            height="10"
+            fill="#E91E63"/>
 
 
-  <!-- ================================================= -->
-  <!-- RIGHT BLACK EXCEL WORKSPACE -->
-  <!-- ================================================= -->
+      <g stroke="#DDDDDD">
 
-  <g filter="url(#shadow)">
+        <line x1="72"
+              y1="30"
+              x2="72"
+              y2="135"/>
 
-    <rect
-      x="600"
-      y="42"
-      width="535"
-      height="416"
-      rx="28"
-      fill="#111111"
-      stroke="#E85A88"
-      stroke-width="2.5"/>
+        <line x1="143"
+              y1="30"
+              x2="143"
+              y2="135"/>
+
+        <line x1="0"
+              y1="56"
+              x2="215"
+              y2="56"/>
+
+        <line x1="0"
+              y1="82"
+              x2="215"
+              y2="82"/>
+
+        <line x1="0"
+              y1="108"
+              x2="215"
+              y2="108"/>
+
+      </g>
+
+
+      <!-- MOVING CELL -->
+
+      <rect x="1"
+            y="31"
+            width="69"
+            height="24"
+            fill="none"
+            stroke="#111111"
+            stroke-width="2">
+
+        <animate attributeName="x"
+                 values="1;73;144;73;1"
+                 dur="3s"
+                 repeatCount="indefinite"/>
+
+        <animate attributeName="y"
+                 values="31;57;83;109;31"
+                 dur="3s"
+                 repeatCount="indefinite"/>
+
+      </rect>
+
+
+      <g font-family="Arial"
+         font-size="8"
+         fill="#555555">
+
+        <text x="10"
+              y="20"
+              font-weight="700"
+              fill="#FFFFFF">
+          DATA
+        </text>
+
+        <text x="10" y="48">route</text>
+        <text x="82" y="48">service</text>
+        <text x="153" y="48">delay</text>
+
+        <text x="10" y="74">route</text>
+        <text x="82" y="74">service</text>
+        <text x="153" y="74">delay</text>
+
+        <text x="10" y="100">route</text>
+        <text x="82" y="100">service</text>
+        <text x="153" y="100">delay</text>
+
+        <text x="10" y="126">route</text>
+        <text x="82" y="126">service</text>
+        <text x="153" y="126">delay</text>
+
+      </g>
+
+    </g>
+
+
+    <text x="25"
+          y="285"
+          font-family="monospace"
+          font-size="10"
+          fill="#555555">
+      XLOOKUP • SUMIFS
+    </text>
+
+    <text x="25"
+          y="303"
+          font-family="monospace"
+          font-size="10"
+          fill="#555555">
+      PivotTable • Filter
+    </text>
+
+    <rect x="25"
+          y="337"
+          width="215"
+          height="5"
+          rx="3"
+          fill="#EEEEEE"/>
+
+    <rect x="25"
+          y="337"
+          width="80"
+          height="5"
+          rx="3"
+          fill="#E91E63">
+
+      <animate attributeName="width"
+               values="50;210;100;50"
+               dur="2.5s"
+               repeatCount="indefinite"/>
+
+    </rect>
 
   </g>
 
 
-  <text
-    x="630"
-    y="78"
-    font-family="Arial"
-    font-size="12"
-    font-weight="800"
-    letter-spacing="2"
-    fill="#F05A8A">
-
-    EXCEL ANALYTICS
-
-  </text>
-
-
-  <text
-    x="630"
-    y="108"
-    font-family="Arial"
-    font-size="25"
-    font-weight="800"
-    fill="#FFFFFF">
-
-    Delivery Data Workspace
-
-  </text>
-
-
-  <!-- ANIMATED DOT -->
-
-  <circle
-    cx="928"
-    cy="101"
-    r="4"
-    fill="#F05A8A"
-    filter="url(#glow)">
-
-    <animate
-      attributeName="r"
-      values="3;7;3"
-      dur="1.6s"
-      repeatCount="indefinite"/>
-
-  </circle>
-
-
   <!-- ================================================= -->
-  <!-- DATA TABLE -->
+  <!-- CARD 3 : SQL -->
   <!-- ================================================= -->
 
-  <rect
-    x="635"
-    y="136"
-    width="300"
-    height="204"
-    rx="14"
-    fill="#FFFFFF"/>
+  <g transform="translate(660 235)">
+
+    <rect width="265"
+          height="365"
+          rx="22"
+          fill="#111111"
+          filter="url(#shadow)"/>
+
+    <text x="25"
+          y="35"
+          font-family="Arial"
+          font-size="11"
+          font-weight="700"
+          letter-spacing="1.5"
+          fill="#E91E63">
+      STEP 03
+    </text>
+
+    <text x="25"
+          y="65"
+          font-family="Arial"
+          font-size="21"
+          font-weight="800"
+          fill="#FFFFFF">
+      SQL
+    </text>
+
+    <text x="25"
+          y="87"
+          font-family="Arial"
+          font-size="12"
+          fill="#999999">
+      Query &amp; aggregate
+    </text>
 
 
-  <!-- TABLE HEADER -->
+    <!-- TERMINAL -->
 
-  <rect
-    x="635"
-    y="136"
-    width="300"
-    height="38"
-    rx="14"
-    fill="url(#rose)"/>
+    <rect x="25"
+          y="112"
+          width="215"
+          height="135"
+          rx="12"
+          fill="#202020"
+          stroke="#444444"/>
 
+    <circle cx="43"
+            cy="130"
+            r="5"
+            fill="#E91E63">
 
-  <rect
-    x="635"
-    y="159"
-    width="300"
-    height="15"
-    fill="url(#rose)"/>
+      <animate attributeName="opacity"
+               values="1;.2;1"
+               dur="1.2s"
+               repeatCount="indefinite"/>
 
+    </circle>
 
-  <text
-    x="650"
-    y="160"
-    font-family="Arial"
-    font-size="9"
-    font-weight="800"
-    fill="#111111">
+    <circle cx="59"
+            cy="130"
+            r="5"
+            fill="#555555"/>
 
-    ID
-
-  </text>
-
-
-  <text
-    x="724"
-    y="160"
-    font-family="Arial"
-    font-size="9"
-    font-weight="800"
-    fill="#111111">
-
-    ROUTE
-
-  </text>
+    <circle cx="75"
+            cy="130"
+            r="5"
+            fill="#555555"/>
 
 
-  <text
-    x="799"
-    y="160"
-    font-family="Arial"
-    font-size="9"
-    font-weight="800"
-    fill="#111111">
+    <text x="40"
+          y="160"
+          font-family="monospace"
+          font-size="10"
+          fill="#E91E63">
+      SELECT
+    </text>
 
-    SERVICE
+    <text x="40"
+          y="179"
+          font-family="monospace"
+          font-size="10"
+          fill="#FFFFFF">
+      SUM(delay_days)
+    </text>
 
-  </text>
+    <text x="40"
+          y="198"
+          font-family="monospace"
+          font-size="10"
+          fill="#AAAAAA">
+      GROUP BY service
+    </text>
+
+    <text x="40"
+          y="217"
+          font-family="monospace"
+          font-size="10"
+          fill="#AAAAAA">
+      ORDER BY delay
+    </text>
 
 
-  <text
-    x="875"
-    y="160"
-    font-family="Arial"
-    font-size="9"
-    font-weight="800"
-    fill="#111111">
+    <rect x="205"
+          y="208"
+          width="5"
+          height="12"
+          fill="#E91E63">
 
-    DELAY
+      <animate attributeName="opacity"
+               values="1;0;1"
+               dur=".8s"
+               repeatCount="indefinite"/>
 
-  </text>
+    </rect>
 
 
-  <!-- TABLE GRID -->
+    <text x="25"
+          y="285"
+          font-family="monospace"
+          font-size="10"
+          fill="#AAAAAA">
+      JOIN • GROUP BY
+    </text>
 
-  <g stroke="#DDDDDD" stroke-width="1">
+    <text x="25"
+          y="303"
+          font-family="monospace"
+          font-size="10"
+          fill="#AAAAAA">
+      HAVING • ORDER BY
+    </text>
 
-    <line x1="710" y1="174" x2="710" y2="340"/>
-    <line x1="785" y1="174" x2="785" y2="340"/>
-    <line x1="860" y1="174" x2="860" y2="340"/>
 
-    <line x1="635" y1="207" x2="935" y2="207"/>
-    <line x1="635" y1="240" x2="935" y2="240"/>
-    <line x1="635" y1="273" x2="935" y2="273"/>
-    <line x1="635" y1="306" x2="935" y2="306"/>
+    <rect x="25"
+          y="337"
+          width="215"
+          height="5"
+          rx="3"
+          fill="#333333"/>
+
+    <rect x="25"
+          y="337"
+          width="75"
+          height="5"
+          rx="3"
+          fill="#E91E63">
+
+      <animate attributeName="width"
+               values="45;210;90;45"
+               dur="2.5s"
+               repeatCount="indefinite"/>
+
+    </rect>
 
   </g>
 
 
-  <!-- TABLE DATA -->
+  <!-- ================================================= -->
+  <!-- CARD 4 : PYTHON -->
+  <!-- ================================================= -->
 
-  <g
-    font-family="Arial"
-    font-size="8"
-    fill="#777777">
+  <g transform="translate(950 235)">
 
-    <text x="650" y="197">•</text>
-    <text x="724" y="197">Route</text>
-    <text x="799" y="197">Standard</text>
-    <text x="875" y="197">Delay</text>
+    <rect width="265"
+          height="365"
+          rx="22"
+          fill="#FFFFFF"
+          stroke="#111111"
+          stroke-width="1.5"
+          filter="url(#shadow)"/>
 
-    <text x="650" y="230">•</text>
-    <text x="724" y="230">Route</text>
-    <text x="799" y="230">Express</text>
-    <text x="875" y="230">Delay</text>
+    <text x="25"
+          y="35"
+          font-family="Arial"
+          font-size="11"
+          font-weight="700"
+          letter-spacing="1.5"
+          fill="#E91E63">
+      STEP 04
+    </text>
 
-    <text x="650" y="263">•</text>
-    <text x="724" y="263">Route</text>
-    <text x="799" y="263">Standard</text>
-    <text x="875" y="263">Delay</text>
+    <text x="25"
+          y="65"
+          font-family="Arial"
+          font-size="21"
+          font-weight="800"
+          fill="#111111">
+      Python
+    </text>
 
-    <text x="650" y="296">•</text>
-    <text x="724" y="296">Route</text>
-    <text x="799" y="296">Express</text>
-    <text x="875" y="296">Delay</text>
+    <text x="25"
+          y="87"
+          font-family="Arial"
+          font-size="12"
+          fill="#666666">
+      Analyze &amp; export
+    </text>
 
-    <text x="650" y="329">•</text>
-    <text x="724" y="329">Route</text>
-    <text x="799" y="329">Standard</text>
-    <text x="875" y="329">Delay</text>
+
+    <!-- CODE WINDOW -->
+
+    <rect x="25"
+          y="112"
+          width="215"
+          height="135"
+          rx="12"
+          fill="#111111"/>
+
+
+    <text x="42"
+          y="140"
+          font-family="monospace"
+          font-size="10"
+          fill="#E91E63">
+      pandas
+    </text>
+
+    <text x="42"
+          y="161"
+          font-family="monospace"
+          font-size="9"
+          fill="#FFFFFF">
+      merge(...)
+    </text>
+
+    <text x="42"
+          y="180"
+          font-family="monospace"
+          font-size="9"
+          fill="#AAAAAA">
+      groupby(...)
+    </text>
+
+    <text x="42"
+          y="199"
+          font-family="monospace"
+          font-size="9"
+          fill="#AAAAAA">
+      clean_data(...)
+    </text>
+
+    <text x="42"
+          y="218"
+          font-family="monospace"
+          font-size="9"
+          fill="#AAAAAA">
+      export(...)
+    </text>
+
+
+    <rect x="42"
+          y="228"
+          width="160"
+          height="3"
+          rx="2"
+          fill="#333333"/>
+
+    <rect x="42"
+          y="228"
+          width="45"
+          height="3"
+          rx="2"
+          fill="#E91E63">
+
+      <animate attributeName="width"
+               values="20;150;55;20"
+               dur="2s"
+               repeatCount="indefinite"/>
+
+    </rect>
+
+
+    <text x="25"
+          y="285"
+          font-family="monospace"
+          font-size="10"
+          fill="#555555">
+      clean_data.csv
+    </text>
+
+    <text x="25"
+          y="303"
+          font-family="monospace"
+          font-size="10"
+          fill="#555555">
+      summary • chart
+    </text>
+
+
+    <rect x="25"
+          y="337"
+          width="215"
+          height="5"
+          rx="3"
+          fill="#EEEEEE"/>
+
+    <rect x="25"
+          y="337"
+          width="75"
+          height="5"
+          rx="3"
+          fill="#111111">
+
+      <animate attributeName="width"
+               values="45;210;90;45"
+               dur="2.5s"
+               repeatCount="indefinite"/>
+
+    </rect>
 
   </g>
 
 
-  <!-- ANIMATED LOOKUP BOX -->
+  <!-- ================================================= -->
+  <!-- CARD 5 : POWER BI -->
+  <!-- ================================================= -->
 
-  <rect
-    x="742"
-    y="188"
-    width="75"
-    height="33"
-    fill="none"
-    stroke="#F05A8A"
-    stroke-width="3">
+  <g transform="translate(1240 235)">
 
-    <animate
-      attributeName="x"
-      values="742;790;865;742"
-      dur="4s"
-      repeatCount="indefinite"/>
+    <rect width="265"
+          height="365"
+          rx="22"
+          fill="#111111"
+          filter="url(#shadow)"/>
 
-  </rect>
+    <text x="25"
+          y="35"
+          font-family="Arial"
+          font-size="11"
+          font-weight="700"
+          letter-spacing="1.5"
+          fill="#E91E63">
+      STEP 05
+    </text>
+
+    <text x="25"
+          y="65"
+          font-family="Arial"
+          font-size="21"
+          font-weight="800"
+          fill="#FFFFFF">
+      Power BI
+    </text>
+
+    <text x="25"
+          y="87"
+          font-family="Arial"
+          font-size="12"
+          fill="#999999">
+      Dashboard
+    </text>
+
+
+    <!-- DASHBOARD -->
+
+    <rect x="25"
+          y="112"
+          width="215"
+          height="135"
+          rx="12"
+          fill="#202020"
+          stroke="#444444"/>
+
+
+    <!-- KPI -->
+
+    <rect x="40"
+          y="128"
+          width="48"
+          height="22"
+          rx="5"
+          fill="#E91E63">
+
+      <animate attributeName="opacity"
+               values=".5;1;.5"
+               dur="2s"
+               repeatCount="indefinite"/>
+
+    </rect>
+
+    <rect x="95"
+          y="128"
+          width="48"
+          height="22"
+          rx="5"
+          fill="#FFFFFF"/>
+
+    <rect x="150"
+          y="128"
+          width="48"
+          height="22"
+          rx="5"
+          fill="#E91E63">
+
+      <animate attributeName="opacity"
+               values="1;.4;1"
+               dur="2s"
+               repeatCount="indefinite"/>
+
+    </rect>
+
+
+    <!-- BAR CHART -->
+
+    <rect x="45"
+          y="205"
+          width="16"
+          height="25"
+          rx="2"
+          fill="#E91E63">
+
+      <animate attributeName="height"
+               values="15;40;25;32;15"
+               dur="2s"
+               repeatCount="indefinite"/>
+
+      <animate attributeName="y"
+               values="215;190;205;198;215"
+               dur="2s"
+               repeatCount="indefinite"/>
+
+    </rect>
+
+
+    <rect x="70"
+          y="195"
+          width="16"
+          height="35"
+          rx="2"
+          fill="#FFFFFF">
+
+      <animate attributeName="height"
+               values="35;18;42;25;35"
+               dur="2.2s"
+               repeatCount="indefinite"/>
+
+      <animate attributeName="y"
+               values="195;212;188;205;195"
+               dur="2.2s"
+               repeatCount="indefinite"/>
+
+    </rect>
+
+
+    <rect x="95"
+          y="202"
+          width="16"
+          height="28"
+          rx="2"
+          fill="#E91E63">
+
+      <animate attributeName="height"
+               values="20;42;16;32;20"
+               dur="2.1s"
+               repeatCount="indefinite"/>
+
+      <animate attributeName="y"
+               values="210;188;214;198;210"
+               dur="2.1s"
+               repeatCount="indefinite"/>
+
+    </rect>
+
+
+    <!-- TREND -->
+
+    <path d="M125 220
+             C140 208 150 215 162 198
+             C174 184 185 195 205 178"
+          fill="none"
+          stroke="#E91E63"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-dasharray="0 150">
+
+      <animate attributeName="stroke-dasharray"
+               values="0 150;150 0"
+               dur="2.5s"
+               repeatCount="indefinite"/>
+
+    </path>
+
+
+    <!-- SLICER -->
+
+    <rect x="125"
+          y="162"
+          width="75"
+          height="8"
+          rx="4"
+          fill="#444444"/>
+
+    <circle cx="140"
+            cy="166"
+            r="6"
+            fill="#E91E63">
+
+      <animate attributeName="cx"
+               values="140;185;155;190;140"
+               dur="3s"
+               repeatCount="indefinite"/>
+
+    </circle>
+
+
+    <text x="25"
+          y="285"
+          font-family="Arial"
+          font-size="10"
+          fill="#AAAAAA">
+      KPI • Charts • Slicer
+    </text>
+
+
+    <rect x="25"
+          y="337"
+          width="215"
+          height="5"
+          rx="3"
+          fill="#333333"/>
+
+    <rect x="25"
+          y="337"
+          width="80"
+          height="5"
+          rx="3"
+          fill="#E91E63">
+
+      <animate attributeName="width"
+               values="50;210;100;50"
+               dur="2.5s"
+               repeatCount="indefinite"/>
+
+    </rect>
+
+  </g>
 
 
   <!-- ================================================= -->
-  <!-- PIVOT SUMMARY -->
+  <!-- CROSS CHECK -->
   <!-- ================================================= -->
 
-  <rect
-    x="965"
-    y="145"
-    width="136"
-    height="190"
-    rx="15"
-    fill="#1B1B1B"
-    stroke="#444444"/>
+  <g transform="translate(510 635)">
+
+    <rect width="580"
+          height="70"
+          rx="18"
+          fill="#FFFFFF"
+          stroke="#E91E63"
+          stroke-width="2"
+          filter="url(#shadow)"/>
 
 
-  <text
-    x="982"
-    y="171"
-    font-family="Arial"
-    font-size="10"
-    font-weight="800"
-    fill="#FFFFFF">
+    <circle cx="38"
+            cy="35"
+            r="21"
+            fill="#111111"/>
 
-    PIVOT SUMMARY
+    <path d="M27 35
+             L34 42
+             L49 26"
+          fill="none"
+          stroke="#E91E63"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-dasharray="35"
+          stroke-dashoffset="35">
 
-  </text>
+      <animate attributeName="stroke-dashoffset"
+               values="35;0;35"
+               dur="2s"
+               repeatCount="indefinite"/>
 
-
-  <!-- BASELINE -->
-
-  <line
-    x1="982"
-    y1="300"
-    x2="1084"
-    y2="300"
-    stroke="#666666"
-    stroke-width="2"/>
-
-
-  <!-- BAR 1 -->
-
-  <rect
-    x="992"
-    y="270"
-    width="16"
-    height="30"
-    rx="2"
-    fill="#F05A8A">
-
-    <animate
-      attributeName="height"
-      values="10;45;30"
-      dur="2.5s"
-      repeatCount="indefinite"/>
-
-    <animate
-      attributeName="y"
-      values="290;255;270"
-      dur="2.5s"
-      repeatCount="indefinite"/>
-
-  </rect>
+    </path>
 
 
-  <!-- BAR 2 -->
+    <text x="75"
+          y="30"
+          font-family="Arial"
+          font-size="12"
+          font-weight="800"
+          letter-spacing="1"
+          fill="#111111">
+      CROSS-CHECK
+    </text>
 
-  <rect
-    x="1018"
-    y="250"
-    width="16"
-    height="50"
-    rx="2"
-    fill="#FFFFFF">
+    <text x="75"
+          y="50"
+          font-family="Arial"
+          font-size="11"
+          fill="#666666">
+      Excel • SQL • Python • Power BI
+    </text>
 
-    <animate
-      attributeName="height"
-      values="18;55;50"
-      dur="2.5s"
-      begin=".25s"
-      repeatCount="indefinite"/>
-
-    <animate
-      attributeName="y"
-      values="282;245;250"
-      dur="2.5s"
-      begin=".25s"
-      repeatCount="indefinite"/>
-
-  </rect>
-
-
-  <!-- BAR 3 -->
-
-  <rect
-    x="1044"
-    y="273"
-    width="16"
-    height="27"
-    rx="2"
-    fill="#F05A8A">
-
-    <animate
-      attributeName="height"
-      values="9;40;27"
-      dur="2.5s"
-      begin=".5s"
-      repeatCount="indefinite"/>
-
-    <animate
-      attributeName="y"
-      values="291;260;273"
-      dur="2.5s"
-      begin=".5s"
-      repeatCount="indefinite"/>
-
-  </rect>
-
-
-  <!-- BAR 4 -->
-
-  <rect
-    x="1070"
-    y="239"
-    width="16"
-    height="61"
-    rx="2"
-    fill="#FFFFFF">
-
-    <animate
-      attributeName="height"
-      values="20;68;61"
-      dur="2.5s"
-      begin=".75s"
-      repeatCount="indefinite"/>
-
-    <animate
-      attributeName="y"
-      values="280;232;239"
-      dur="2.5s"
-      begin=".75s"
-      repeatCount="indefinite"/>
-
-  </rect>
-
-
-  <!-- TREND LINE -->
-
-  <line
-    x1="982"
-    y1="263"
-    x2="1084"
-    y2="263"
-    stroke="#F05A8A"
-    stroke-width="2">
-
-    <animate
-      attributeName="x2"
-      values="982;1084;982"
-      dur="3s"
-      repeatCount="indefinite"/>
-
-  </line>
+  </g>
 
 
   <!-- ================================================= -->
-  <!-- LOOKUP SUMMARY -->
+  <!-- ANIMATED FLOW PARTICLES -->
   <!-- ================================================= -->
 
-  <rect
-    x="650"
-    y="365"
-    width="451"
-    height="63"
-    rx="15"
-    fill="#1B1B1B"
-    stroke="#333333"/>
+  <g fill="#E91E63">
+
+    <circle cx="350"
+            cy="435"
+            r="4">
+
+      <animate attributeName="cx"
+               values="345;365;345"
+               dur="1.5s"
+               repeatCount="indefinite"/>
+
+    </circle>
 
 
-  <!-- SEARCH ICON -->
+    <circle cx="640"
+            cy="435"
+            r="4">
 
-  <circle
-    cx="684"
-    cy="395"
-    r="14"
-    fill="none"
-    stroke="#F05A8A"
-    stroke-width="4"/>
+      <animate attributeName="cx"
+               values="635;655;635"
+               dur="1.5s"
+               begin=".4s"
+               repeatCount="indefinite"/>
 
-
-  <line
-    x1="694"
-    y1="406"
-    x2="706"
-    y2="418"
-    stroke="#F05A8A"
-    stroke-width="4"
-    stroke-linecap="round"/>
+    </circle>
 
 
-  <circle
-    cx="684"
-    cy="395"
-    r="7"
-    fill="none"
-    stroke="#F7A1BB"
-    stroke-width="2"/>
+    <circle cx="930"
+            cy="435"
+            r="4">
+
+      <animate attributeName="cx"
+               values="925;945;925"
+               dur="1.5s"
+               begin=".8s"
+               repeatCount="indefinite"/>
+
+    </circle>
 
 
-  <text
-    x="720"
-    y="391"
-    font-family="Arial"
-    font-size="12"
-    font-weight="800"
-    fill="#FFFFFF">
+    <circle cx="1220"
+            cy="435"
+            r="4">
 
-    LOOKUP → CLEAN → SUMMARY
+      <animate attributeName="cx"
+               values="1215;1235;1215"
+               dur="1.5s"
+               begin="1.2s"
+               repeatCount="indefinite"/>
 
-  </text>
+    </circle>
 
-
-  <text
-    x="720"
-    y="410"
-    font-family="Courier New"
-    font-size="9"
-    fill="#AAAAAA">
-
-    XLOOKUP(route_id, lookup, service_type)
-
-  </text>
-
-
-  <!-- STATUS DOT -->
-
-  <circle
-    cx="1046"
-    cy="396"
-    r="4"
-    fill="#F05A8A"
-    filter="url(#glow)">
-
-    <animate
-      attributeName="r"
-      values="3;7;3"
-      dur="1.5s"
-      repeatCount="indefinite"/>
-
-  </circle>
-
-
-  <!-- ================================================= -->
-  <!-- FLOATING PARTICLES -->
-  <!-- ================================================= -->
-
-  <circle
-    cx="1110"
-    cy="118"
-    r="3"
-    fill="#F05A8A">
-
-    <animate
-      attributeName="cy"
-      values="118;108;118"
-      dur="2s"
-      repeatCount="indefinite"/>
-
-  </circle>
-
-
-  <circle
-    cx="945"
-    cy="349"
-    r="3"
-    fill="#F7A1BB">
-
-    <animate
-      attributeName="cx"
-      values="945;955;945"
-      dur="2s"
-      repeatCount="indefinite"/>
-
-  </circle>
+  </g>
 
 
   <!-- ================================================= -->
   <!-- FOOTER -->
   <!-- ================================================= -->
 
-  <text
-    x="635"
-    y="448"
-    font-family="Arial"
-    font-size="9"
-    font-weight="700"
-    letter-spacing="1.5"
-    fill="#777777">
-
-    EXCEL • CLEANING • XLOOKUP • SUMIFS • PIVOTTABLE • CHART
-
+  <text x="70"
+        y="790"
+        font-family="Arial"
+        font-size="11"
+        font-weight="700"
+        letter-spacing="1.6"
+        fill="#777777">
+    DATA SETUP • EXCEL • SQL • PYTHON • POWER BI • CROSS-CHECK
   </text>
 
+  <rect x="70"
+        y="800"
+        width="150"
+        height="4"
+        rx="2"
+        fill="#E91E63"/>
 
 </svg>
