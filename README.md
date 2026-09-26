@@ -1,6 +1,8 @@
 
 <img width="1200" height="500" alt="pic" src="https://github.com/user-attachments/assets/ffb74c70-123b-45c9-a100-c91a5b12ac6d" />
 
+---
+
 **Student:** [Priya Savaliya ] — [Student ID :- 10211]
 **Assigned Set:** Set A (`data-analysis-set-A_10211`)
 **Repo:** https://github.com/priyasavaliya20-collab/data-analysis-set-A_10211
