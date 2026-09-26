@@ -23,19 +23,29 @@ Find where delivery delay is concentrated (service type / route / hub) and wheth
 2. Is monthly delay trending up, and which routes exceed 8 total delay days?
 
 ---
+## 📂 Project Structure
 
-## 📂 Project Files
+```
+data-analysis-set-A_10211/
+├── README.md
+├── Data/ (deliveries.csv, routes.csv)
+├── sql/ (setup.sql, queries.sql, output/*.csv)
+├── python/ (Delivery_Delay_Analysis.ipynb)
+├── excel/ (analysis.xlsx)
+└── powerbi/ (dashboard.pbix)
+└── output/ (clean_data.csv,python_summary.csv, python_chart.png,s2a_delay_by_service_type.csv)
+```
 
-| File | Description |
-|---|---|
-| `Data/deliveries.csv` | Raw — 13 rows (1 exact duplicate: `record_id 12`) |
-| `Data/routes.csv` | Route master — 4 routes |
-| `Data/clean_data.csv` | Cleaned & merged — 12 rows |
-| `sql/setup.sql` | Creates & seeds tables |
-| `sql/queries.sql` | 5 analysis queries |
-| `python/Delivery_Delay_Analysis.ipynb` | Clean → merge → metrics → chart |
-| `excel/analysis.xlsx` | Raw / Lookup / Clean / Summary sheets |
-| `powerbi/dashboard.pbix` | KPI dashboard |
+---
+
+## 🎬 Project Demo
+
+[![Watch Demo](https://img.shields.io/badge/Watch%20Demo-Add%20Your%20Link-blue?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/file/d/1pYHeKxMDf2fWG_HQ8d7azHstZ1XleWEh/view?usp=sharing)
+
+📹 Add a link to your project walkthrough video here.
+
+---
+
 
 ---
 
@@ -94,14 +104,6 @@ SELECT hub, SUM(GREATEST(actual_days - promised_days, 0)) AS total_delay_days
 FROM deliveries GROUP BY hub ORDER BY total_delay_days DESC LIMIT 2;
 ```
 
-| Query | Result |
-|---|---|
-| Q1 service_type | Standard = 21, Express = 12 |
-| Q2 routes >8 | R4 = 16, R1 = 9 |
-| Q3 top 2 hubs | Mumbai = 22, Delhi = 6 |
-| Q4 unmatched routes | 0 |
-| Q5 row counts | deliveries = 12, routes = 4 |
-
 ---
 
 ## 🐍 Python — Setup & Run
@@ -135,12 +137,16 @@ service_summary = df.groupby('service_type').agg(
 ---
 
 ## ⚡ Power BI — Refresh Steps
-
 ```
 Home → Transform Data → Data Source Settings
 → Change Source → point to new local CSV path
 → Close & Apply → Refresh
+
 ```
+
+<img width="1165" height="657" alt="Powerbi Dashboard" src="https://github.com/user-attachments/assets/6cc15479-98ed-45be-94e4-5a5d52243a0e" />
+
+
 
 ---
 
@@ -194,6 +200,23 @@ Home → Transform Data → Data Source Settings
 
 ---
 
+## 📌 Expected Outcomes
+
+- One reconciled total-delay figure agreed across SQL, Python, Excel, Power BI
+- Route- and hub-level breakdown pinpointing R4 (Rural Feeder) and Mumbai as top delay drivers
+- Reusable cleaning/metric pipeline (`delay_days`, `is_delayed`, incidence rate)
+
+---
+
+## 🚀 Suggested Next Steps
+
+- Extend data beyond 3 months to confirm the Jan→Mar delay trend
+- Investigate root cause at Mumbai hub and R4 route (carrier, capacity, distance)
+- Repoint Power BI source to `clean_data.csv` to match the other tools
+
+---
+
+
 ## ⚙️ Installation
 
 ```bash
@@ -202,25 +225,13 @@ cd data-analysis-set-A_10211
 pip install -r requirements.txt
 ```
 
-## 📂 Project Structure
+## 🙏 Thank You
 
-```
-data-analysis-set-A_10211/
-├── README.md
-├── Data/ (deliveries.csv, routes.csv, clean_data.csv)
-├── sql/ (setup.sql, queries.sql, output/*.csv)
-├── python/ (Delivery_Delay_Analysis.ipynb, python_summary.csv, python_chart.png)
-├── excel/ (analysis.xlsx)
-└── powerbi/ (dashboard.pbix)
-```
+Thanks for checking out this project! Feedback, suggestions, and contributions are always welcome.
 
----
+⭐ If you found this project helpful, don't forget to star the repository and share it.
 
-## 🎬 Demo
-**Video:** [add link] · **Duration:** [add duration]
 
-## 📚 References
-None beyond standard pandas / matplotlib / SQL / Excel / Power BI docs.
 
-## ✍️ Authorship
-All work in this repository is my own except where cited.
+
+
