@@ -1,4 +1,4 @@
-
+<img width="1600" height="820" alt="pic" src="https://github.com/user-attachments/assets/115ea7a1-310a-47a2-a496-2c9f2b532771" /><img width="1200" height="500" alt="pic" src="https://github.com/user-attachments/assets/62cac1ae-e9ad-4695-b659-62a46a19bef6" />
 <img width="1200" height="500" alt="pic" src="https://github.com/user-attachments/assets/ffb74c70-123b-45c9-a100-c91a5b12ac6d" />
 
 ---
@@ -33,11 +33,11 @@
 ---
 
 ## 🎯 Objective
-Find where delivery delay is concentrated (service type / route / hub) and whether it's trending up, to prioritize corrective action.
 
-**Business questions:**
-1. Which service type, route, and hub account for the most delay?
-2. Is monthly delay trending up, and which routes exceed 8 total delay days?
+
+
+
+
 
 ---
 
@@ -55,30 +55,9 @@ data-analysis-set-A_10211/
 ```
 ## ♻️ Workflow
 
-```
-deliveries.csv + routes.csv
-        │
-        ▼
-   drop_duplicates()        (13 → 12 rows)
-        │
-        ▼
-   LEFT JOIN on route_id    (attach route_name, service_type)
-        │
-        ▼
-   delay_days = MAX(actual − promised, 0)
-   is_delayed = actual > promised
-        │
-        ▼
- ┌───────┬───────────┬───────┬──────────┐
- │  SQL  │  Python   │ Excel │ Power BI │
- └───────┴───────────┴───────┴──────────┘
-        │
-        ▼
-   Reconcile total delay days across all 4 tools
-        │
-        ▼
-   Findings → Recommendation
-```
+<img width="1600" height="820" alt="pic" src="https://github.com/user-attachments/assets/eeceac91-fc87-4c6c-87c5-5e51aaece0c2" />
+
+
 ---
 
 
@@ -137,6 +116,9 @@ df['is_delayed'] = df['actual_days'] > df['promised_days']
 ---
 
 ## 📊 Excel Sheet Guide
+
+<img width="1200" height="500" alt="pic" src="https://github.com/user-attachments/assets/5ec191c6-e4b9-46de-b243-8e3616626546" />
+
 
 | Sheet | Purpose |
 |---|---|
@@ -204,6 +186,7 @@ service_summary = df.groupby('service_type').agg(
 ## ⚡ Power BI — Refresh Steps
 
 
+<img width="1200" height="500" alt="pic" src="https://github.com/user-attachments/assets/5fc72967-dc15-4dae-85a7-5999c967daa4" />
 
 
 
